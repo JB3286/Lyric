@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { windowWhen } from 'rxjs';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'landingPage',
@@ -10,5 +11,11 @@ export class LandingPageComponent {
 
   author = "Andreas Chilinsky";
   domain = "www.Andreas-Chilinsky.de"; 
+
+  constructor(private router: Router){}
+
+  hello(){
+    this.router.navigateByUrl('hello');
+  }
 
 }

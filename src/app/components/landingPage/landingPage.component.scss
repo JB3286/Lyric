@@ -2,7 +2,7 @@
     position:relative;
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    min-width: 100vw;
     row-gap: 1rem;
     font-weight: bold;
     min-height: 100%;
@@ -43,7 +43,8 @@
     width:100vw;
     align-content: center;
     justify-content: space-evenly;
-    margin: 2rem auto;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
 }
 
 .header-nav-items-container-item{

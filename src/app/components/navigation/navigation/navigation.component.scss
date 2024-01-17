@@ -7,33 +7,3 @@
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
-
-.header-nav-items-container-item{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-    width: 9rem;
-} 
-
-.header-nav-items-container-item:hover{
-    border-radius: .5rem;
-    background-color: white;
-    cursor: pointer;
-}
-
-.header-nav-items-container-item-logo{
-    text-align: center;
-    padding: .25rem;
-}
-
-.header-nav-items-container-item-logo img{
-    border-radius: 1.5rem;
-}
-
-.header-nav-items-container-item-description p{
-    margin: 0;
-    padding: .25rem;
-    font-size: 1.5rem;
-}

@@ -6,13 +6,17 @@ import { LandingPageComponent } from './components/landingPage/landingPage.compo
 import { FooterComponent } from './components/footer/footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { NavigationComponent } from './components/navigation/navigation/navigation.component';
+import { PoemComponent } from './components/poem/poem/poem.component';
+import { NavigationItemComponent } from './components/navigation/navigation-item/navigation-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
     FooterComponent,
-    NavigationComponent
+    NavigationComponent,
+    PoemComponent,
+    NavigationItemComponent
   ],
   imports: [
     BrowserModule,

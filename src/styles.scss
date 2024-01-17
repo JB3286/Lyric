@@ -1,6 +1,42 @@
 @font-face{
     font-family:"Adelia";
-    src:url('./fonts/adelia.ttf');
+    src:url('./fonts/adelia/adelia.ttf');
+}
+
+@font-face{
+    font-family: "BirdsOfParadies";
+    src: url('./fonts/birdsOfParadies/Birds\ of\ Paradise\ ©\ PERSONAL\ USE\ ONLY.ttf')
+}
+
+@font-face{
+    font-family: "Madina";
+    src: url("./fonts/madina/Madina.ttf")
+}
+
+@font-face{
+    font-family: "BabyGirl";
+    src:url('./fonts/babyGirl/Baby\ Girly.ttf');
+}
+
+@font-face{
+    font-family: "Roboto";
+    src: url("./fonts/roboto/Roboto-Regular.ttf");
+}
+
+.roboto-font{
+    font-family:"Roboto";
+}
+
+.babyGirl-font{
+    font-family: "BabyGirl";
+}
+
+.madina-font{
+    font-family: "Madina";
+}
+
+.birdsOfParadies-font{
+    font-family: "BirdsOfParadies";
 }
 
 .adelia-font{
@@ -8,7 +44,6 @@
 }
 
 html{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 0;
     margin: 0;
     overflow-x: hidden;
@@ -17,7 +52,7 @@ html{
 }
 
 body{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: "Roboto";
     background-color: rgba(0,0,0,0.1);
     margin:0;
     padding:0;

@@ -4,7 +4,7 @@
     min-height: 100%;
     grid-template-columns: 10% auto;
     grid-template-rows: auto auto auto;
-    background-image: url('../../../../assets/pics/hazynature_111.jpg');
+    background-image: url('../../../../assets/pics/hazynature_113.jpg');
     padding:0;
     margin: 0;
 }
@@ -17,7 +17,7 @@
 }
 
 .head-controller-headline{
-    width: fit-content;
+    width: 100%;
 }
 
 .head-controller-headline h1, p{
@@ -56,6 +56,7 @@ ol.breadcrump{
 
 #breadcrumps-previousPage:hover a{
     font-weight: bolder;
+    text-decoration: underline;
 }
 
 #breadcrumps-currentPage {

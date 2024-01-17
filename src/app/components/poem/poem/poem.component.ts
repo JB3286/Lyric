@@ -10,6 +10,10 @@ export class PoemComponent {
 
     constructor(private router:Router){}
 
+    onInit(): void{
+      window.scrollTo(0,10000);
+    }
+
     home(){
       this.router.navigateByUrl('/');
     }

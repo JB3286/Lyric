@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'poem',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class PoemComponent {
 
+    constructor(private router:Router){}
+
+    home(){
+      this.router.navigateByUrl('/');
+    }
 }

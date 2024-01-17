@@ -9,7 +9,8 @@
     padding-bottom: 8rem;
 }
 
-#author-container.header-nav-author-domain{
+.header-nav-nav{
+    pointer-events: none;
 }
 
 #author-container.header-nav-author-domain h1{
@@ -18,10 +19,18 @@
     margin-top: .5rem;
 }
 
+#author-container.header-nav-author-domain:hover h1{
+    pointer-events: none;
+}
+
 #domain-container.header-nav-author-domain h4{
     font-size: 1.25rem;
     font-weight: lighter;
 
+}
+
+#domain-container.header-nav-author-domain:hover h4{
+    pointer-events: none;
 }
 
 .header-nav-author-domain{
@@ -51,4 +60,12 @@
     align-items: center;
     padding-bottom: 1rem;
     margin: 0 auto 4rem auto;
+}
+
+.lyrics-speach-content-poetry:hover h3{
+    pointer-events: none;
+}
+
+.lyrics-speach-content-speaker:hover h4{
+    pointer-events: none;
 }

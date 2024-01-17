@@ -25,15 +25,13 @@ export class NavigationComponent {
     "../../../assets/icons/contact_50x50.jpg",
   ]
 
-  
- 
+  navItemRoutes: string[] = [
+    "poems",
+    "/",
+    "/",
+    "/",
+  ]
 
   ngOnInit():void{
-  }
-
-    
-  
-  hello(){
-    this.routes.navigateByUrl('hello');
   }
 }

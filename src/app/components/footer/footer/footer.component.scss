@@ -29,7 +29,7 @@
     column-gap: .5rem;
 }
 
-.footer-item{
+.footer-item, .footer-item-divider{
     padding: .5rem;
 }
 
@@ -45,6 +45,10 @@
     color: #313350;
 }
 
+.footer-item-divider span:hover{
+    pointer-events:none;
+}
+
 .footer-socialMedia-container{
     display:flex;
     flex-direction: column;
@@ -55,6 +59,14 @@
     align-items: center;
     padding: .5rem;
     justify-content: center;
+}
+
+.footer-socialMedia-description p{
+    margin:0;
+}
+
+.footer-socialMedia-description:hover p{
+    pointer-events: none;
 }
 
 .footer-socialMedia-links{
@@ -76,4 +88,5 @@
 .footer-copyRight{
     padding: .5rem;
     font-weight: lighter;
+    pointer-events: none;
 }

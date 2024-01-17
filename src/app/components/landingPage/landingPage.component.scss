@@ -37,46 +37,6 @@
     width: 100%;
 }
 
-.header-nav-items-container{
-    display:flex;
-    flex-direction: row;
-    width:100vw;
-    align-content: center;
-    justify-content: space-evenly;
-    margin-top: 1rem;
-    margin-bottom: 3rem;
-}
-
-.header-nav-items-container-item{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-    width: 8rem;
-} 
-
-.header-nav-items-container-item:hover{
-    border-radius: .5rem;
-    background-color: white;
-    cursor: pointer;
-    overflow: auto;
-}
-
-.header-nav-items-container-item-logo{
-    text-align: center;
-    padding: .25rem;
-}
-
-.header-nav-items-container-item-logo img{
-    border-radius: 1.5rem;
-}
-
-.header-nav-items-container-item-description p{
-    margin: 0;
-    padding: .25rem;
-}
-
 .section-divider hr{
     width: 90%;
     text-align: center;

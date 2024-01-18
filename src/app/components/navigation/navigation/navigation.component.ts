@@ -27,9 +27,13 @@ export class NavigationComponent {
 
   navItemRoutes: string[] = [
     "poems",
+    "sidenav",
     "/",
     "/",
-    "/",
+  ]
+
+  icons: string[] = [
+    "bi bi-arrow-down"
   ]
 
   ngOnInit():void{

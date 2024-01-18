@@ -4,7 +4,6 @@ header-nav-items-container-item{
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
-    width: 9rem;
 } 
 
 .header-nav-items-container-item:hover{
@@ -22,8 +21,23 @@ header-nav-items-container-item{
     border-radius: 1.5rem;
 }
 
+.header-nav-items-container-item-description{
+    display:flex;
+    flex-direction: row;
+}
+
 .header-nav-items-container-item-description p{
     margin: 0;
     padding: .25rem;
     font-size: 1.5rem;
 }
+
+.header-nav-items-container-item-description-icon{
+    background-color: black;
+}
+
+#description-icon{
+    font-size: 2rem;
+    color: white;
+}
+

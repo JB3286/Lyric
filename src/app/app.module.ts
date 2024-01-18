@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { NavigationComponent } from './components/navigation/navigation/navigation.component';
 import { PoemComponent } from './components/poem/poem/poem.component';
 import { NavigationItemComponent } from './components/navigation/navigation-item/navigation-item.component';
+import { SideNavComponent } from './components/poem/side-nav/side-nav.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { NavigationItemComponent } from './components/navigation/navigation-item
     FooterComponent,
     NavigationComponent,
     PoemComponent,
-    NavigationItemComponent
+    NavigationItemComponent,
+    SideNavComponent,
   ],
   imports: [
     BrowserModule,

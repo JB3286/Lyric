@@ -12,7 +12,8 @@ export class NavigationItemComponent {
   @Input() title:string = '';
   @Input() url: string = '';
   @Input() route: string = '';
-
+  @Input() icon?: string = '';
+ 
   tabindex: number = 0;
 
   constructor(private routes: Router){}

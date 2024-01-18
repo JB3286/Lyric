@@ -14,6 +14,10 @@ export class LandingPageComponent {
 
   constructor(private router: Router){}
 
+  onInit(): void{
+    window.scrollTo(0,0);
+  }
+
   hello(){
     this.router.navigateByUrl('hello');
   }

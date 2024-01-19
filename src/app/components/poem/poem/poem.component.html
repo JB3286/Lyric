@@ -14,7 +14,27 @@
         </div>
     </div>
     <div class="poem-content">
-        <h1>It´s Poem's Content</h1>
+        <div class="poem-content-poem" id="poem-content-poem">
+            <div class="poem-content-poem-header" id="poem-header">
+                <h3>verfasst am: {{poem.date}}</h3>
+            </div>
+            <div class="poem-content-poem-table-container" id="poem-content-poem-table-container">
+                <table class="poem-content-poem-table" id="poem-content-poem-table">    
+                    <thead class="poem-content-poem-table-header" id="poem-content-poem-table-header">
+                        <tr class="poem-content-poem-table-header-row" id="poem-content-poem-table-header-row">
+                            <th class="poem-content-poem-table-header-column" scope="col">{{poem.title}}</th>
+                        </tr>
+                    </thead>
+                    <tbody class="poem-content-poem-table-body">
+                    <div class="poem-content-poem-table-body-container" id="poem-content-poem-table-body-container">      
+                            <tr class="poem-content-poem-table-body-row" id="poem-content-poem-table-body-row" *ngFor="let string of poem.content">
+                                <td class="poem-content-table-body-row-content" id="poem-content-table-body-row-content"><p class="poem-content-poem-table-body-row-content-item" id="poem-content-poem-table-body-row-content-item" >{{string}}</p></td>
+                            </tr>
+                        </div>    
+                    </tbody>
+                </table>    
+            </div>
+        </div>
     </div>
-       <side-nav></side-nav>
+    <side-nav></side-nav>
 </div>

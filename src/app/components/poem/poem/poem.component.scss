@@ -92,6 +92,60 @@ side-nav{
     align-self: center;
 }
 
+.poem-content-poem-content{
+    display: grid;
+    grid-template-columns: auto;
+    row-gap: 0;
+    
+}
+
+/* Wrapper-table */
+.poem-content-poem-table-container{
+    display:grid;
+    justify-content: center;
+}
+
+/* table */
+
+.poem-content-poem-table{
+    width: 100%;
+}
+
+/* table-head */
+
+.poem-content-poem-table-header{
+    background-color: rgba(0,0,0,0.1) ;
+    display: grid;
+    justify-content: center;
+}
+
+.poem-content-poem-header-table-head-row{
+    height: 1rem;
+}
+
+.poem-content-poem-table-body{
+}
+
+.poem-content-poem-table-body-container{
+    width: fit-content;
+}
+/* tr inside tbody */
+.poem-content-poem-table-body-row{
+}
+
+/* td inside tbody.tr */
+.poem-content-table-body-row-content{
+    height: 1rem;
+}
+
+/* Paragraph inside tbody.tr.td */
+.poem-content-poem-table-body-row-content-item{
+    padding: 0;
+    margin:0;
+    line-height: 1rem;
+}
+
+
 footer{
     grid-column: 1/3;
     grid-row: 3;

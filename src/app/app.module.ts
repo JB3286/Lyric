@@ -9,6 +9,7 @@ import { NavigationComponent } from './components/navigation/navigation/navigati
 import { PoemComponent } from './components/poem/poem/poem.component';
 import { NavigationItemComponent } from './components/navigation/navigation-item/navigation-item.component';
 import { SideNavComponent } from './components/poem/side-nav/side-nav.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { SideNavComponent } from './components/poem/side-nav/side-nav.component'
     PoemComponent,
     NavigationItemComponent,
     SideNavComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,

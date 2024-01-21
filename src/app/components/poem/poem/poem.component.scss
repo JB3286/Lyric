@@ -4,7 +4,7 @@
     grid-template-rows: auto auto auto;
     width: 100vw;
     min-height: 100vh;
-    background-image: url('../../../../assets/pics/poem_background_coloured.jpg');
+    background-image: url('/assets/pics/poem_background_coloured.jpg');
     color: black;
     background-size: cover;
     column-gap: 1rem;
@@ -110,7 +110,6 @@ table,thead,tr,td{
 #table-body-row-category{
     font-size: .75rem;
     text-align: right;
-    font-weight: bold;
     padding: .5rem;
 }
 

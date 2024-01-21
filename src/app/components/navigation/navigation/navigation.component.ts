@@ -27,7 +27,7 @@ export class NavigationComponent {
 
   navItemRoutes: string[] = [
     "poems",
-    "sidenav",
+    "about",
     "/",
     "/",
   ]

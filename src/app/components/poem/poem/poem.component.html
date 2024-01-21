@@ -1,3 +1,92 @@
+<div id="poem-wrapper">
+    <!--Header-section-start-->
+    <div id="head-section">
+        <div id="head-section-title">
+            <h1 id="head-section-title">Gedichte</h1>
+        </div>
+        <div id="head-section-subtitle">
+            meine Schriften | mein Leben | Gefühl gespiegelt
+        </div>
+        <div id="head-section-breadcrumps">
+            <ul class="breadcrumbs">
+                <li id="breadcrumps-home"><i class="bi bi-house-door-fill" role="button" (click)="home()"></i></li>
+                <li id="breadcrumps-divider"><i class="bi bi-arrow-left" id="breadcrumps-divider-icon"></i></li>
+                <li id="breadcrumps-currentPage">Gedichte</li>
+            </ul>
+        </div>
+    </div>
+    <!--Header-section-end-->
+    <!--Content-table-start-->
+    <div id="table-wrapper">
+        <table id="table">
+            <thead id="table-head">
+                <tr class="table-head-row">
+                    <th id="table-head-row-title" colspan="3">
+                        {{poem.title}}
+                    </th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tr class="table-head-row">
+                    <th id="table-head-row-subtitle" colspan="3">
+                        {{poem.subtitle?poem.subtitle:""}}
+                    </th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                <tr class="table-body-row-date">
+                    <td id="table-body-row-date"><p class="data-improver">verfasst am: <span class="data-improver-bold">{{poem.date?poem.date:"unbekannt"}}</span></p>
+                    <p class="data-improver">überarbeitet am: <span class="data-improver-bold">19.06.2035</span></p></td>
+                    <td id="table-body-row-date-dummy"></td>
+                    <td id="table-body-row-category"><p class="data-improver">Kategorie: <span class="data-improver-bold">{{poem.category}}</span></p></td>
+                </tr>
+                <tr class="table-body-row">
+                    <td class="table-body-row-date"></td>
+                    <td class="table-body-row-date"></td>
+                    <td class="table-body-row-date"></td>
+                </tr>
+                <tr class="table-body-row" *ngFor="let row of poem.content">
+                    <td></td>
+                    <td class="table-body-row-data">
+                        {{row}}
+                    </td>
+                    <td></td>
+                </tr>
+                <tr class="button-row">
+                    <td class="button-container" ><button *ngIf="index>0" class="selection-button" type="button" id="previous-button" (click)="iterateIndexBackwards()"><span><i class="bi bi-caret-left-fill"></i></span>zurück</button></td>
+                    <td></td>
+                    <td class="button-container"><button *ngIf="index<poems.length-1" type="button" class="selection-button" id="next-button" (click)="iterateIndex()">weiter<span><i class="bi bi-caret-right-fill"></i></span></button></td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            Space for comments
+        </div>
+        <!-- Lösung für die Kommentare des Verfasssers finden
+        <div id="comments-section">
+            <div>
+                <hr>
+            </div>
+            <div id="comments">
+                {{poem.comments}}
+            </div>
+        </div>
+        -->
+    </div>
+    <side-nav></side-nav>
+    <div class="list-container" id="list-container">
+        <h4>Space for a list</h4>
+    </div>
+</div>
+
+
+
+
+
+<!--
+
 <div class="poem-wrapper" id="poem-wrapper">
     <div class="head-controller" id="headController">
         <div class="head-controller-headline" id="head-controller-headline">    
@@ -13,21 +102,48 @@
             </nav>
         </div>
     </div>
-    <div class="poem-content">
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>{{poem.title}}</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+
+
+        <div class="poem-content">
         <div class="poem-content-poem" id="poem-content-poem">
-            <div class="poem-content-poem-header" id="poem-header">
-                <h3>verfasst am: {{poem.date}}</h3>
-            </div>
             <div class="poem-content-poem-table-container" id="poem-content-poem-table-container">
                 <table class="poem-content-poem-table" id="poem-content-poem-table">    
                     <thead class="poem-content-poem-table-header" id="poem-content-poem-table-header">
                         <tr class="poem-content-poem-table-header-row" id="poem-content-poem-table-header-row">
-                            <th class="poem-content-poem-table-header-column" scope="col">{{poem.title}}</th>
+                            <th class="poem-content-poem-table-header-column" scope="col">
+                                <p class="poem-content-poem-table-head-row-content-item" id="poem-content-poem-table-head-row-content-item">{{poem.title}}</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th class="poem-content-poem-table-header-column">
+                                <p class="poem-content-poem-table-head-row-content-item-subtitle" scope="col">{{poem.subtitle}}</p>
+                            </th>
                         </tr>
                     </thead>
+                    <div class="poem-content-properties" id="poem-content-properties">
+                        <div class="poems-properties-content" id="poems-properties-content">
+                            <p class="poem-content-properties-item">Datum: {{poem.date}}</p>
+                        </div>
+                        <div class="poems-properties-content" id="poems-properties-content">
+                            <p class="poem-content-properties-item">Kategorie: {{poem.category}}</p>
+                        </div>
+                    </div>
                     <tbody class="poem-content-poem-table-body">
-                    <div class="poem-content-poem-table-body-container" id="poem-content-poem-table-body-container">      
-                            <tr class="poem-content-poem-table-body-row" id="poem-content-poem-table-body-row" *ngFor="let string of poem.content">
+                        <tr class="poem-content-poem-table--row">
+                            <td class="poem-content-table-body-row-content"></td>
+                        </tr>
+                                <div class="poem-content-poem-table-body-container" id="poem-content-poem-table-body-container">      
+                            <tr class="poem-content-poem-table-row" id="poem-content-poem-table-body-row" *ngFor="let string of poem.content">
                                 <td class="poem-content-table-body-row-content" id="poem-content-table-body-row-content"><p class="poem-content-poem-table-body-row-content-item" id="poem-content-poem-table-body-row-content-item" >{{string}}</p></td>
                             </tr>
                         </div>    
@@ -36,5 +152,4 @@
             </div>
         </div>
     </div>
-    <side-nav></side-nav>
-</div>
+-->

@@ -5,15 +5,19 @@
 
 #poem-head-section{
     display: grid;
-    width: 100vw;
+    max-width: 100vw;
     justify-content: center;
     row-gap: 1rem;
+}
 
+side-nav{
+    margin-top: 1rem;
 }
 
 #head-section-title h1{
     margin: 0;
     text-align: center;
+    margin: 1rem auto;
 }
 
 .poem-content-subtitle{
@@ -25,6 +29,7 @@
     grid-template-columns: auto auto 1px auto auto;
     column-gap: 3rem;
     width: 100vw;
+    margin-top: 1rem;
 }
 
 .poem-wrapper-content{
@@ -32,7 +37,7 @@
 }
 
 .nav-icon{
-    font-size: 4rem;
+    font-size: 3rem;
     align-self: center;
 }
 #nav-icon-left{

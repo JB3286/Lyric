@@ -1,4 +1,4 @@
-export interface FooterItem{
+export interface FooterItem {
     title: string,
     route: string,
 }

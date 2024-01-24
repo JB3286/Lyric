@@ -3,12 +3,11 @@
         <side-nav></side-nav>
         <div id="head-section-title">
             <h1>{{poems[index].category}}</h1>
-            <h3>{{index}}</h3>
         </div>
     </div>
     <div id="poem-content-wrapper">
         <div *ngIf="index!=0" class="nav-icon" id="nav-icon-left">
-            <i class="bi bi-caret-left-fill" role="button" (click)="iterateIndexBackwards()"></i>
+            <i class="bi bi-caret-left-fill" role="button" (click)="indexDown()"></i>
         </div>
        
        <!--Hier einen weiteren Wrapper setzen, um die Cursor von  der Größenveränderung der Tablle auszuschließen-->
@@ -77,7 +76,7 @@
             <h1 class="astonScript">Finie</h1>
         </div>
         <div *ngIf="poems[index+1]" class="nav-icon" id="nav-icon-right">
-            <i class="bi bi-caret-right-fill" role="button" (click)="iterateIndex()"></i>
+            <i class="bi bi-caret-right-fill" role="button" (click)="indexUp()"></i>
         </div>
     </div>
 <footer></footer>

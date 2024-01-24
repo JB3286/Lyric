@@ -11,6 +11,7 @@ import { NavigationItemComponent } from './components/navigation/navigation-item
 import { SideNavComponent } from './components/poem/side-nav/side-nav.component';
 import { AboutComponent } from './components/about/about.component';
 import { FooterItemComponent } from './components/footer/footer-item/footer-item.component';
+import { PoemService } from './service/poem.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { FooterItemComponent } from './components/footer/footer-item/footer-item
     AppRoutingModule,
     RouterModule
   ],
-  providers: [],
+  providers: [PoemService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

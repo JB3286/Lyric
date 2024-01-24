@@ -27,30 +27,28 @@ export class PoemComponent {
   }
 
   indexUp(): void {
-    if (this.index < this.poems.length - 1) {
-      this.index++;
-      this.poem = this.poems[this.index];
-    }
+    this.index = this.index+2;
   }
   
   indexDown(): void {
-    if (this.index != 0) {
-      this.index--;
-      this.poem = this.poems[this.index];
-    }
+    this.index = this.index-2;    
   }
 
   getAllPoems(): void{
     this.poems = this.service.getPoems();
   }
 
+  getPoemsByCategory(category: string){
+    this.poems = this.service.getPoemsByCategory(category);
+  }
+
+  getPoemByTitle(title: string){
+    this.poem = this.service.getPoemByTitle(title);
+  }
 
   ngOnInit(): void {
-    this.getAllPoems();
+    this.getPoemsByCategory('Leben');
   }
 
-  home() {
-    this.router.navigateByUrl('/');
-  }
-
+  
 }

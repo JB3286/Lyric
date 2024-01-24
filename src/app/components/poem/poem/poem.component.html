@@ -1,36 +1,65 @@
 <div id="poem-wrapper">
     <div id="poem-head-section">
         <side-nav></side-nav>
+        <router-outlet></router-outlet>
         <div id="head-section-title">
-            <h1>{{poems[index].category}}</h1>
+            <h1 *ngIf="index!=0; else alternative">{{poems[index].category}}</h1>
+            <ng-template #alternative>
+                <h1 id="head-section-title-content">{{poems[index].category}}</h1>
+            </ng-template>
         </div>
     </div>
+    <!--<h1 style="text-align: center;">{{index}}</h1>-->
     <div id="poem-content-wrapper">
-        <div *ngIf="index!=0" class="nav-icon" id="nav-icon-left">
+        <div *ngIf="index!=0 && poems[index+1]" class="nav-icon" id="nav-icon-left">
             <i class="bi bi-caret-left-fill" role="button" (click)="indexDown()"></i>
         </div>
-       
-       <!--Hier einen weiteren Wrapper setzen, um die Cursor von  der Größenveränderung der Tablle auszuschließen-->
-        <table id="poem-content-left" *ngIf="poems[index]">
+        <table id="poem-content-left" *ngIf="poems[index+1]">
             <thead>
                 <tr>
-                    <th>{{poems[index].title}}</th>
+                    <th *ngIf="poems[index+1]; else alternativeth0">{{poems[index].title}}</th>
+                    <ng-template #alternativeth0>
+                        <th>
+                            {{poems[index+1].title}}
+                        </th>
+                    </ng-template>
                 </tr>
                 <tr>
-                    <th class="poem-content-subtitle">{{poems[index].subtitle?poems[index].subtitle:""}}</th>
+                    <th class="poem-content-subtitle" *ngIf="poems[index+1]; else alternativeth1">
+                        {{poems[index].subtitle?poems[index].subtitle:""}}
+                    </th>
+                    <ng-template #alternativeth1>
+                        <th>
+                            {{poems[index].subtitle?poems[index+1].subtitle:""}}
+                        </th>
+                    </ng-template>
                 </tr>
             </thead>
 
             <body>
-                <tr>
-                    <td></td>
-                </tr>
-                <tr *ngFor="let content of poems[index].content">
-                    <td>{{content}}</td>
-                </tr>
+                <div *ngIf="poems[index+1]; then regular else alternativetd"></div>
+                <ng-template #regular>
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr *ngFor="let content of poems[index].content">
+                        <td>{{content}}</td>
+                    </tr>
+                </ng-template>
+                <ng-template #alternativetd>
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr *ngFor="let content of poems[index+1].content">
+                        <td>{{content}}</td>
+                    </tr>
+                </ng-template>
             </body>
         </table>
-        <table id="poem-content-left" *ngIf="!poems[index+1]">
+        <div class="d-flex" *ngIf="poems[index+1]">
+            <div class="vr"></div>
+        </div>
+        <table id="poem-content-right" *ngIf="poems[index]">
             <thead>
                 <tr>
                     <th>{{poems[index+1].title}}</th>
@@ -39,6 +68,7 @@
                     <th class="poem-content-subtitle">{{poems[index+1].subtitle?poems[index+1].subtitle:""}}</th>
                 </tr>
             </thead>
+
             <body>
                 <tr>
                     <td></td>
@@ -48,38 +78,22 @@
                 </tr>
             </body>
         </table>
-        <div class="d-flex">
-            <div class="vr" *ngIf="poems[index+1]"></div>
-        </div>
-        <table id="poem-content-right" *ngIf="poems[index+1]">
-            <thead>
-                <tr>
-                    <th>{{poems[index+1].title}}</th>
-                </tr>
-                <tr>
-                    <th class="poem-content-subtitle">{{poems[index+1].subtitle?poems[index+1].subtitle:""}}</th>
-                </tr>
-            </thead>
 
-            <body>
-                <tr>
-                    <td></td>
-                </tr>
-                <tr *ngFor="let content of poems[index+1].content">
-                    <td>{{content}}</td>
-                </tr>
-            </body>
-        </table>
-
-    <!-- Bis hierher -->
-        <div *ngIf="!poems[index+1]" id="content-finished">
-            <h1 class="astonScript">Finie</h1>
-        </div>
-        <div *ngIf="poems[index+1]" class="nav-icon" id="nav-icon-right">
+        <!-- Bis hierher -->
+        <div class="nav-icon" id="nav-icon-right" *ngIf="index<poems.length">
+            <p>{{index}}</p>
             <i class="bi bi-caret-right-fill" role="button" (click)="indexUp()"></i>
         </div>
     </div>
-<footer></footer>
+    <div id="content-finished" *ngIf="!poems[index+1];">
+        <div class="nav-icon" id="nav-icon-end">
+            <i class="bi bi-caret-left-fill" role="button" (click)="indexDown()"></i>
+        </div>
+        <div>
+            <h1 class="astonScript">Finie</h1>
+        </div>
+    </div>
+    <footer></footer>
 </div>
 <!--
     <div id="table-wrapper">

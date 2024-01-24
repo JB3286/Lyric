@@ -9,17 +9,12 @@ import { Router } from '@angular/router';
 })
 export class LandingPageComponent {
 
-  author = "Andreas Chilinsky";
-  domain = "www.Andreas-Chilinsky.de"; 
+  author: string = "Andreas Chilinski";
+  domain: string = "Lebensrauschen"; 
 
   constructor(private router: Router){}
 
   onInit(): void{
-    window.scrollTo(0,0);
-  }
-
-  hello(){
-    this.router.navigateByUrl('hello');
   }
 
 }

@@ -10,6 +10,7 @@ import { SideNavComponent } from './components/poem/side-nav/side-nav.component'
 const routes: Routes = [
   {path:'', pathMatch:'full', component: LandingPageComponent},
   {path:'poems', component: PoemComponent},
+  {path:'poems/life', component: SideNavComponent},
   {path:'about', component: AboutComponent},
 ];
 

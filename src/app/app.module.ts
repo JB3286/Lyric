@@ -10,6 +10,7 @@ import { PoemComponent } from './components/poem/poem/poem.component';
 import { NavigationItemComponent } from './components/navigation/navigation-item/navigation-item.component';
 import { SideNavComponent } from './components/poem/side-nav/side-nav.component';
 import { AboutComponent } from './components/about/about.component';
+import { FooterItemComponent } from './components/footer/footer-item/footer-item.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { AboutComponent } from './components/about/about.component';
     NavigationItemComponent,
     SideNavComponent,
     AboutComponent,
+    FooterItemComponent,
   ],
   imports: [
     BrowserModule,

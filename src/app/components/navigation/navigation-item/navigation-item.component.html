@@ -1,9 +1,12 @@
-<div class="header-nav-items-container-item" id="itemImage" routerLink={{route}}>
-    <div class="header-nav-items-container-item-logo">
-        <img src={{url}} tabindex="1"/>
-    </div>
-    <div class="header-nav-items-container-item-description">
-        <p class="roboto-font">{{title}}</p>
-        <div class="header-nav-items-container-item-description-icon"></div>
+<div id="navigation-item-wrapper">
+    <div class="navigation-item">
+        <h4 id="navigation-item-title">
+            {{navItem.title}}
+        </h4>
+        <div *ngIf="navItem.subNavigation" class="navigation-subNavigation">
+            <div *ngFor="let subNav of navItem.subNavigation " class="navigation-subNavigation-item-container">
+                <navigation-item class="subNavigation-item" [navItem]="subNav" routerLink={{subNav.route}}></navigation-item> 
+            </div>
+        </div>
     </div>
 </div>

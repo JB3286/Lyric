@@ -1,22 +1,88 @@
 <div id="poem-wrapper">
-    <!--Header-section-start-->
-    <div id="head-section">
+    <div id="poem-head-section">
+        <side-nav></side-nav>
         <div id="head-section-title">
-            <h1 id="head-section-title">Gedichte</h1>
-        </div>
-        <div id="head-section-subtitle">
-            <h4>meine Schriften | mein Leben | Gefühl gespiegelt</h4>
-        </div>
-        <div id="head-section-breadcrumps">
-            <ul class="breadcrumbs">
-                <li id="breadcrumps-home"><i class="bi bi-house-door-fill" role="button" (click)="home()"></i></li>
-                <li id="breadcrumps-divider"><i class="bi bi-arrow-left" id="breadcrumps-divider-icon"></i></li>
-                <li id="breadcrumps-currentPage">Gedichte</li>
-            </ul>
+            <h1>{{poems[index].category}}</h1>
+            <h3>{{index}}</h3>
         </div>
     </div>
-    <!--Header-section-end-->
-    <!--Content-table-start-->
+    <div id="poem-content-wrapper">
+        <div *ngIf="index!=0" class="nav-icon" id="nav-icon-left">
+            <i class="bi bi-caret-left-fill" role="button" (click)="iterateIndexBackwards()"></i>
+        </div>
+       
+       <!--Hier einen weiteren Wrapper setzen, um die Cursor von  der Größenveränderung der Tablle auszuschließen-->
+        <table id="poem-content-left" *ngIf="poems[index]">
+            <thead>
+                <tr>
+                    <th>{{poems[index].title}}</th>
+                </tr>
+                <tr>
+                    <th class="poem-content-subtitle">{{poems[index].subtitle?poems[index].subtitle:""}}</th>
+                </tr>
+            </thead>
+
+            <body>
+                <tr>
+                    <td></td>
+                </tr>
+                <tr *ngFor="let content of poems[index].content">
+                    <td>{{content}}</td>
+                </tr>
+            </body>
+        </table>
+        <table id="poem-content-left" *ngIf="!poems[index+1]">
+            <thead>
+                <tr>
+                    <th>{{poems[index+1].title}}</th>
+                </tr>
+                <tr>
+                    <th class="poem-content-subtitle">{{poems[index+1].subtitle?poems[index+1].subtitle:""}}</th>
+                </tr>
+            </thead>
+            <body>
+                <tr>
+                    <td></td>
+                </tr>
+                <tr *ngFor="let content of poems[index+1].content">
+                    <td>{{content}}</td>
+                </tr>
+            </body>
+        </table>
+        <div class="d-flex">
+            <div class="vr" *ngIf="poems[index+1]"></div>
+        </div>
+        <table id="poem-content-right" *ngIf="poems[index+1]">
+            <thead>
+                <tr>
+                    <th>{{poems[index+1].title}}</th>
+                </tr>
+                <tr>
+                    <th class="poem-content-subtitle">{{poems[index+1].subtitle?poems[index+1].subtitle:""}}</th>
+                </tr>
+            </thead>
+
+            <body>
+                <tr>
+                    <td></td>
+                </tr>
+                <tr *ngFor="let content of poems[index+1].content">
+                    <td>{{content}}</td>
+                </tr>
+            </body>
+        </table>
+
+    <!-- Bis hierher -->
+        <div *ngIf="!poems[index+1]" id="content-finished">
+            <h1 class="astonScript">Finie</h1>
+        </div>
+        <div *ngIf="poems[index+1]" class="nav-icon" id="nav-icon-right">
+            <i class="bi bi-caret-right-fill" role="button" (click)="iterateIndex()"></i>
+        </div>
+    </div>
+<footer></footer>
+</div>
+<!--
     <div id="table-wrapper">
         <table id="table">
             <thead id="table-head">
@@ -24,29 +90,14 @@
                     <th id="table-head-row-title" colspan="3">
                         {{poem.title}}
                     </th>
-                    <th></th>
-                    <th></th>
                 </tr>
                 <tr class="table-head-row">
                     <th id="table-head-row-subtitle" colspan="3">
                         {{poem.subtitle?poem.subtitle:""}}
                     </th>
-                    <th></th>
-                    <th></th>
                 </tr>
             </thead>
             <tbody id="table-body">
-                <tr class="table-body-row-date">
-                    <td id="table-body-row-date"><p class="data-improver">verfasst am: <span class="data-improver-bold">{{poem.date?poem.date:"unbekannt"}}</span></p>
-                    <p class="data-improver">überarbeitet am: <span class="data-improver-bold">19.06.2035</span></p></td>
-                    <td id="table-body-row-date-dummy"></td>
-                    <td id="table-body-row-category"><p class="data-improver">Kategorie: <span class="data-improver-bold">{{poem.category}}</span></p></td>
-                </tr>
-                <tr class="table-body-row">
-                    <td class="table-body-row-date"></td>
-                    <td class="table-body-row-date"></td>
-                    <td class="table-body-row-date"></td>
-                </tr>
                 <tr class="table-body-row" *ngFor="let row of poem.content">
                     <td></td>
                     <td class="table-body-row-data">
@@ -57,14 +108,11 @@
                 <tr class="button-row">
                     <td class="button-container" ><button *ngIf="index>0" class="selection-button" type="button" id="previous-button" (click)="iterateIndexBackwards()"><span><i class="bi bi-caret-left-fill"></i></span>zurück</button></td>
                     <td></td>
-                    <td class="button-container"><button *ngIf="index<poems.length-1" type="button" class="selection-button" id="next-button" (click)="iterateIndex()">weiter<span><i class="bi bi-caret-right-fill"></i></span></button></td>
+                    <td class="button-container"><button *ngIf="index<poems.length-index+1" type="button" class="selection-button" id="next-button" (click)="iterateIndex()">weiter<span><i class="bi bi-caret-right-fill"></i></span></button></td>
                 </tr>
             </tbody>
         </table>
-        <div>
-            Space for comments
-        </div>
-        <!-- Lösung für die Kommentare des Verfasssers finden
+        Lösung für die Kommentare des Verfasssers finden
         <div id="comments-section">
             <div>
                 <hr>
@@ -73,28 +121,37 @@
                 {{poem.comments}}
             </div>
         </div>
-        -->
+    
     </div>
     <side-nav></side-nav>
-    <div class="list-container" id="list-container">
-        <h4>Space for categories list</h4>
-    </div>
 </div>
 
 
+<!--- Poem-Details
+<tr class="table-body-row-date">
+                    <td id="table-body-row-date"><p class="data-improver">verfasst am: <span class="data-improver-bold">{{poem.date?poem.date:"unbekannt"}}</span></p>
+                    <p class="data-improver">überarbeitet am: <span class="data-improver-bold">index+19.06.2035</span></p></td>
+                    <td id="table-body-row-date-dummy"></td>
+                    <td id="table-body-row-category"><p class="data-improver">Kategorie: <span class="data-improver-bold">{{poem.category}}</span></p></td>
+                </tr>
+                <tr class="table-body-row">
+                    <td class="table-body-row-date"></td>
+                    <td class="table-body-row-date"></td>
+                    <td class="table-body-row-date"></td>
+                </tr>
+---
 
 
 
-<!--
 
 <div class="poem-wrapper" id="poem-wrapper">
     <div class="head-controller" id="headController">
         <div class="head-controller-headline" id="head-controller-headline">    
-            <h1 id="head-controller-headline-headline">Meine Gedichte</h1>
+            <hindex+1 id="head-controller-headline-headline">Meine Gedichte</hindex+1>
             <p>meine Schriften | mein Leben | Gefühl gespiegelt</p>
         </div>
         <div class="breadcrumps" id="breadcrumps">    
-            <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+            <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0Lindex+1 index+1.5 3.5 4 index+1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item" id="breadcrumps-previousPage"><img class="home-icon" src="../../../../assets/icons/home_30x30.jpg" alt="home" role="button" (click)="home()"/>
                   <li class="breadcrumb-item active" aria-current="page" id="breadcrumps-currentPage">Gedichte</li>

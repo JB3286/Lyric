@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { NavigationItem } from '../../../types/navigation-item';
+
 
 @Component({
   selector: 'navigation-item',
@@ -9,27 +11,13 @@ import { Router } from '@angular/router';
 })
 export class NavigationItemComponent {
 
-  @Input() title:string = '';
-  @Input() url: string = '';
-  @Input() route: string = '';
-  @Input() icon?: string = '';
+  navigationItem: NavigationItem = {} as NavigationItem;
  
-  tabindex: number = 0;
+  @Input() navItem: NavigationItem = this.navigationItem;
 
-  constructor(private routes: Router){}
+  constructor(private router: Router) { }
 
-  setTabIndex(): string{
-    this.tabindex+1;
-    return this.tabindex.toString();
-  }
-
-  hello(){
-    this.routes.navigateByUrl('hello');
-  }
-  
-  
-  ngOnInit(): void{
-    this.tabindex = 0;
+  ngOnInit(): void {
   }
 
 

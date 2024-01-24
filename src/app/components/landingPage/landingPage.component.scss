@@ -1,72 +1,58 @@
-.header-nav{
-    position:relative;
-    display: flex;
-    flex-direction: column;
-    min-width: 100vw;
-    row-gap: 1rem;
-    font-weight: bold;
-    min-height: 100%;
-    padding-bottom: 8rem;
-}
-
-.header-nav-nav{
-    pointer-events: none;
-}
-
-#author-container.header-nav-author-domain h1{
-    font-size: 2rem;
-    font-weight: bold;
-    margin: 1.25rem auto;
-}
-
-#author-container.header-nav-author-domain:hover h1{
-    pointer-events: none;
-}
-
-#domain-container.header-nav-author-domain h4{
-    font-size: 1.25rem;
-    font-weight: lighter;
-    margin-top: 1rem;
-
-}
-
-#domain-container.header-nav-author-domain:hover h4{
-    pointer-events: none;
-}
-
-.header-nav-author-domain{
-    text-align: center;
-}
-
-.header-nav-wide{
-    display:flex;
-    width: inherit;
-    
-}
-
-.header-nav-wide img{
-    width: 100%;
-}
-
-.section-divider hr{
-    width: 90%;
-    text-align: center;
-    margin: .25rem auto 0 auto;
-}
-
-.lyrics-speach{
+.landing-page-wrapper{
+    width: 100vw;
+    min-height: 100vh;
     display: grid;
-    width: 75%;
+    grid-template-rows: auto auto auto auto auto auto;
+}
+
+.header-img{
+    margin: 3rem auto;
+}
+
+.header-img img{
+    width: 85vw;
+    height: 350px;
+    border-radius: .25rem;
+}
+
+#landing-page-author-domain-container{
+    width: 100%;
+    display: grid;
     justify-content: center;
-    align-items: center;
-    padding-bottom: 1rem;
-    margin: 0 auto 4rem auto;
+    row-gap: 3rem;
+    margin-top: 5rem;
 }
 
-.lyrics-speach-content-poetry:hover h3{
-    pointer-events: none;
+.landing-page-author-domain{
+    padding:0;
+    margin:0;
 }
 
-.lyrics-speach-content-speaker:hover h4{
-    pointer-events: none;
+.landing-page-author-domain h1 {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.landing-page-author-domain h4{
+    padding: 0;
+    margin: 0;
+    text-align: center;
+
+}
+
+#author-container{
+
+}
+
+#domain-container{
+
+}
+
+navigation{
+    margin-top: 5rem;
+}
+
+footer{
+    margin-top: 10rem;
 }

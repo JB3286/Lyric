@@ -40,8 +40,12 @@ export class PoemComponent {
     }
   }
 
+  getAllPoems(): Poem[]{
+    return this.service.getPoems();
+  }
+
+
   ngOnInit(): void {
-    this.poems = this.service.getPoems();
   }
 
   home() {

@@ -8,10 +8,11 @@ import { RouterModule } from '@angular/router';
 import { NavigationComponent } from './components/navigation/navigation/navigation.component';
 import { PoemComponent } from './components/poem/poem/poem.component';
 import { NavigationItemComponent } from './components/navigation/navigation-item/navigation-item.component';
-import { SideNavComponent } from './components/poem/side-nav/side-nav.component';
+import { SideNavComponent } from './components/navigation/side-nav/side-nav.component';
 import { AboutComponent } from './components/about/about.component';
 import { FooterItemComponent } from './components/footer/footer-item/footer-item.component';
 import { PoemService } from './service/poem.service';
+import { PoemViewComponent } from './components/poem/poem-category-view/poem-view.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { PoemService } from './service/poem.service';
     SideNavComponent,
     AboutComponent,
     FooterItemComponent,
+    PoemViewComponent,
   ],
   imports: [
     BrowserModule,

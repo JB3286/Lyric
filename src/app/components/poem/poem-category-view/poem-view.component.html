@@ -1,0 +1,28 @@
+<div id="table-wrapper">
+    <div id="head-section">
+        <p id="head-section-category">{{poem.category}}</p>
+    </div>
+    <div id="table-content">
+        <table id="poem-table">
+            <thead id="poem-table-head">
+                <tr class="poem-head-row">
+                    <th id="poem-table-title">{{poem.title}}</th>
+                </tr>
+                <tr class="poem-head-row">
+                    <th id="poem-table-subtitle">{{poem.subtitle}}</th>
+                </tr>
+                <tr></tr>
+                <tr></tr>
+            </thead>
+            <tbody id="poem-table-body">
+                <tr class="poem-body-row"></tr>
+                <tr class="poem-body-row"></tr>
+                <tr class="poem-body-row" *ngFor="let p of poem.content">
+                    <td class="poem-body-data">{{p}}</td>
+                </tr>
+            </tbody>
+            <tfoot id="poem-table-footer">
+            </tfoot>
+        </table>
+    </div>
+</div>

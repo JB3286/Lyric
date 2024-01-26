@@ -7,6 +7,6 @@ export interface Poem {
     content: string[
 
     ],
-    comments?: string,
+    comments?: string[],
 }
 

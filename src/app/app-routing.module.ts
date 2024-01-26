@@ -1,17 +1,31 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './components/about/about.component';
-import { FooterComponent } from './components/footer/footer/footer.component';
 import { LandingPageComponent } from './components/landingPage/landingPage.component';
-import { NavigationComponent } from './components/navigation/navigation/navigation.component';
+import { PoemViewComponent } from './components/poem/poem-category-view/poem-view.component';
 import { PoemComponent } from './components/poem/poem/poem.component';
-import { SideNavComponent } from './components/poem/side-nav/side-nav.component';
 
 const routes: Routes = [
-  {path:'', pathMatch:'full', component: LandingPageComponent},
-  {path:'poems', component: PoemComponent},
-  {path:'poems/:category', component: PoemComponent},
-  {path:'about', component: AboutComponent},
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'home',
+  },
+  {
+    path: 'home',
+    component: LandingPageComponent
+  },
+  {
+    path: 'poems',
+    component: PoemComponent,
+    children: [
+      {
+        path: 'view',
+        component: PoemViewComponent,
+      },
+    ]
+  },
+
 ];
 
 @NgModule({

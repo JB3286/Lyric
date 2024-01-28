@@ -1,17 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataInterchangeService } from '../../../services/data-interchange.service';
+
 @Component({
   selector: 'side-nav',
   templateUrl: './side-nav.component.html',
   styleUrl: './side-nav.component.scss'
 })
-export class SideNavComponent {
+export class SideNavComponent implements OnInit {
 
-  constructor(private router: Router){}
+  category = '';
+  
+  constructor(private router: Router, private dataInterchange: DataInterchangeService){}
 
-  about(){
-    this.router.navigateByUrl('about');
+  setCategory(value: string){
+    this.dataInterchange.changeData(value);
   }
 
+  ngOnInit(): void{
+    this.dataInterchange.data$.subscribe(data =>{
+      this.category = data;
+    })
+  }
+
+
+ 
 
 }

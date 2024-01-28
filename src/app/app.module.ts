@@ -4,15 +4,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './components/landingPage/landingPage.component';
 import { FooterComponent } from './components/footer/footer/footer.component';
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { NavigationComponent } from './components/navigation/navigation/navigation.component';
 import { PoemComponent } from './components/poem/poem/poem.component';
 import { NavigationItemComponent } from './components/navigation/navigation-item/navigation-item.component';
 import { SideNavComponent } from './components/navigation/side-nav/side-nav.component';
 import { AboutComponent } from './components/about/about.component';
 import { FooterItemComponent } from './components/footer/footer-item/footer-item.component';
-import { PoemService } from './service/poem.service';
+import { PoemService } from './services/poem.service';
 import { PoemViewComponent } from './components/poem/poem-category-view/poem-view.component';
+import { DataInterchangeService } from './services/data-interchange.service';
 
 @NgModule({
   declarations: [
@@ -30,9 +31,9 @@ import { PoemViewComponent } from './components/poem/poem-category-view/poem-vie
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
   ],
-  providers: [PoemService],
+  providers: [PoemService, DataInterchangeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

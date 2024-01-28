@@ -1,15 +1,15 @@
 <div id="table-wrapper">
     <div id="head-section">
-        <p id="head-section-category">{{poem.category}}</p>
+        <p id="head-section-category">{{inputPoem.category}}</p>
     </div>
     <div id="table-content">
         <table id="poem-table">
             <thead id="poem-table-head">
                 <tr class="poem-head-row">
-                    <th id="poem-table-title">{{poem.title}}</th>
+                    <th id="poem-table-title">{{inputPoem.title}}</th>
                 </tr>
                 <tr class="poem-head-row">
-                    <th id="poem-table-subtitle">{{poem.subtitle}}</th>
+                    <th id="poem-table-subtitle">{{inputPoem.subtitle}}</th>
                 </tr>
                 <tr></tr>
                 <tr></tr>
@@ -17,8 +17,8 @@
             <tbody id="poem-table-body">
                 <tr class="poem-body-row"></tr>
                 <tr class="poem-body-row"></tr>
-                <tr class="poem-body-row" *ngFor="let p of poem.content">
-                    <td class="poem-body-data">{{p}}</td>
+                <tr class="poem-body-row" *ngFor="let content of inputPoem.content">
+                    <td class="poem-body-data">{{content}}</td>
                 </tr>
             </tbody>
             <tfoot id="poem-table-footer">

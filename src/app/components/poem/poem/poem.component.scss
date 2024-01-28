@@ -5,12 +5,11 @@
     grid-template-rows: auto auto auto;
     grid-template-columns: 10% auto 10%;
     justify-content: center;
-    align-items: center;
-    gap:2rem;
+    gap: 2rem;
 }
 
-#poem-content-wrapper{
-    display:flex;
+#poem-content-wrapper {
+    display: flex;
     justify-content: space-evenly;
     grid-row: 2;
     grid-column: 2;
@@ -27,41 +26,40 @@ footer {
     padding: .5rem;
 }
 
-#poem-left{
+#poem-left {
     grid-row: 2;
     grid-column: 2;
 }
 
-#poem-right{
+#poem-right {
     grid-row: 2;
     grid-column: 2;
 }
 
-.nav-arrow{
+.nav-arrow {
     font-size: 2rem;
     padding: .5rem;
     margin: 1rem;
+    margin-top: 15rem;
+    display: flex;
 }
 
 #arrow-left {
     position: fixed;
-    display:flex;
+    display: flex;
     width: 10%;
     justify-content: left;
     grid-row: 2;
     grid-column: 1;
     justify-self: right;
-    align-self: center;
-
 }
 
 #arrow-right {
     position: fixed;
-    display:flex;
+    display: flex;
     width: 10%;
     justify-content: right;
     grid-row: 2;
     grid-column: 3;
     justify-self: left;
-    align-self: center;
 }

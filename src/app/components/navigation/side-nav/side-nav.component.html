@@ -7,15 +7,15 @@
       Kategorien
     </button>
     <ul class="dropdown-menu">
-      <li><a class="dropdown-item" href="#">Leben</a></li>
-      <li><a class="dropdown-item" href="#">Liebe</a></li>
-      <li><a class="dropdown-item" href="#">Erotisches</a></li>
-      <li><a class="dropdown-item" href="#">Philosophisches</a></li>
-      <li><a class="dropdown-item" href="#">Tod</a></li>
+      <li><a class="dropdown-item" role="button" (click)="setCategory('Leben')">Leben</a></li>
+      <li><a class="dropdown-item" role="button" (click)="setCategory('Liebe')">Liebe</a></li>
+      <li><a class="dropdown-item" role="button" (click)="setCategory('Erotisches')">Erotisches</a></li>
+      <li><a class="dropdown-item" role="button" (click)="setCategory('Philosophisches')">Philosophisches</a></li>
+      <li><a class="dropdown-item" role="button" (click)="setCategory('Tod')">Tod</a></li>
     </ul>
   </div>
   <div>
-    <button class="side-nav-container-item" type="button" (click)="about()">Über mich</button>
+    <button class="side-nav-container-item" type="button">Über mich</button>
   </div>
   <div>
     <button class="side-nav-container-item" type="button">Kommentare</button>

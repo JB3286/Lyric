@@ -1,0 +1,36 @@
+#list-view-wrapper{
+    display: flex;
+    flex-direction: column;    
+}
+
+#list-view{
+    width: 70%;
+}
+
+#list-view-category{
+    padding: .5rem;
+}
+
+#directory{
+    width: 100%;
+    text-align: center;
+}
+
+#directory tr,th,td{
+    padding: .5rem;
+}
+
+#directory-body-title{
+    width: fit-content;
+}
+
+.directory-row th,td{
+    width: fit-content;
+}
+
+.directory-row td{
+}
+
+#directory-head-row-empty{
+}
+

@@ -1,0 +1,25 @@
+<div id="list-view-wrapper">
+    <div id="list-view">
+        <table id="directory">
+            <thead>
+                <tr class="directory-row">
+                    <th colspan="3">{{category}}</th>
+                </tr>
+                <tr class="directory-row">
+                    <th class="directory-head-row-content">ID</th>
+                    <th class="directory-head-row-content">Titel</th>
+                    <th class="directory-head-row-content">verfasst am:</th>
+                </tr>
+                <tr class="directory-row">
+                </tr>
+            </thead>
+            <tbody *ngFor="let item of categoryItems">
+                <tr class="directory-row">
+                    <td>{{item.id}}</td>
+                    <td>{{item.title}}</td>
+                    <td>{{item.date}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

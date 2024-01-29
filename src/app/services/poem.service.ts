@@ -16,7 +16,11 @@ export class PoemService {
     { id: "2", date: "27.01.2016", title: "irgendwas", subtitle: "huh", category: "Philosophisches", content: ["Sben heiter,", "irgeneiter!", "", "Hat man wenigstens gelacht,", "dann hht!", "", "Daseute,", "so dene.", "", "Vgen", "es kommt ein Morgen!", "", "Doch ist ist's so gut gedacht?", "Schau! Hab acht!", "Der Clown, der weise", "der sagt dem Weisen leise:", "", "ter,", "eht's nicht weiter!"], comments: [] },
     { id: "3", date: "27.01.2016", title: "LSuckkmwmndwkeit", subtitle: "", category: "Leben", content: ["Sdweeiter,", "irgeDweeht's weiter!", "", "Dstens gelacht,", "dannemacht!", "", "Da die Leute,", "soan heute.", "", "Ve die Sorgen", "es orgen!", "", "Doch  gedacht?", "Schau! Hab acht!", "Der Clown, der weise", "der sagt dem Weisen leise:", "", "Sieh dein Leben heiter,", "irgendwann geht's nicht weiter!"], comments: [] },
     { id: "4", date: "27.01.2016", title: "it", subtitle: "", category: "Leben", content: ["Sdweeiter,", "irgeDweeht's weiter!", "", "Dstens gelacht,", "dannemacht!", "", "Da die Leute,", "soan heute.", "", "Ve die Sorgen", "es orgen!", "", "Doch  gedacht?", "Schau! Hab acht!", "Der Clown, der weise", "der sagt dem Weisen leise:", "", "Sieh dein Leben heiter,", "irgendwann geht's nicht weiter!"], comments: "" },
-    { id: "5", date: "27.01.2016", title: "kajshhdhdhdhdhdh", subtitle: "fefefefefef", category: "Leben", content: ["Sdweeiter,", "irgeDweeht's weiter!", "", "Dstens gelacht,", "dannemacht!", "", "Da die Leute,", "soan heute.", "", "Ve die Sorgen", "es orgen!", "", "Doch  gedacht?", "Schau! Hab acht!", "Der Clown, der weise", "der sagt dem Weisen leise:", "", "Sieh dein Leben heiter,", "irgendwann geht's nicht weiter!"], comments: [] },
+    { id: "5", date: "27.01.2016", title: "kajshhdhdhdhdhdh", subtitle: "fefefefefef", category: "Leben", content: ["Sdweeiter,", "irgeDweeht's weiter!", "", "Dstens gelacht,", "dannemacht!", "", "Da die Leute,", "soan heute.", "", "Ve die Sorgen", "es orgen!", "", "Doch  gedacht?", "Schau! Hab acht!", "Der Clown, der weise", "der sagt dem Weisen leise:", "", "Sieh dein Leben heiter,", "irgendwann geht's nicht weiter!"], comments: [] }, {
+      id: "6", date: "06.07.2016", title: "Ich liebe dich", subtitle: "an S.", category: "Leben", content: [
+        "Tausend mal tausend Mal","hast Du mich getötet.","Getötet und getötet und getötet,","","Und doch liebe ich Dich.","sie will das Glück der Geliebten (des Geliebten).","","Bist Du nun glücklich?"
+      ],comments: []
+    }
    
   ] as Poem[];
 

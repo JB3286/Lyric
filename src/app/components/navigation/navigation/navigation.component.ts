@@ -23,8 +23,8 @@ export class NavigationComponent {
       {title:'Inhaltsverzeichnis',route:'poems/content'},
       {title:'Anhang',route:'poems/appendix'},
     ]},
-    {title:'Über mich',subNavigation: [
-      {title:'Zu den Gedichten',route:'about/poems'},
+    {title:'Über mich', route:'about',subNavigation: [
+      {title:'Zu den Gedichten'},
       {title:'Lesungen',route:'about/readings'}
     ]},
     {title:'Kommentar',subNavigation:[

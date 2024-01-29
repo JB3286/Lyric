@@ -4,6 +4,9 @@ import { AboutComponent } from './components/about/about.component';
 import { LandingPageComponent } from './components/landingPage/landingPage.component';
 import { PoemViewComponent } from './components/poem/poem-category-view/poem-view.component';
 import { PoemComponent } from './components/poem/poem/poem.component';
+import { ListViewCategoryComponent } from './components/directory/list-view/list-view-category.component';
+
+
 
 const routes: Routes = [
   {
@@ -17,15 +20,20 @@ const routes: Routes = [
     component: LandingPageComponent
   },
   {
+    path: 'poems',
+    title: 'poems',
+    component: ListViewCategoryComponent
+  },
+  {
     path: 'poems/leben',
     title: 'Leben',
     component: PoemComponent,
   },
-{
-  path: 'about',
-  title: 'Über mich',
-  component: AboutComponent
-}
+  {
+    path: 'about',
+    title: 'Über mich',
+    component: AboutComponent
+  }
 
 ];
 @NgModule({

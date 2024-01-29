@@ -14,8 +14,7 @@ import { FooterItemComponent } from './components/footer/footer-item/footer-item
 import { PoemService } from './services/poem.service';
 import { PoemViewComponent } from './components/poem/poem-category-view/poem-view.component';
 import { DataInterchangeService } from './services/data-interchange.service';
-import { ListViewComponent } from './components/directory/list-view/list-view.component';
-import { ListItemComponent } from './components/directory/list-item/list-item.component';
+import { ListViewCategoryComponent } from './components/directory/list-view/list-view-category.component';
 
 @NgModule({
   declarations: [
@@ -29,8 +28,7 @@ import { ListItemComponent } from './components/directory/list-item/list-item.co
     AboutComponent,
     FooterItemComponent,
     PoemViewComponent,
-    ListViewComponent,
-    ListItemComponent,
+    ListViewCategoryComponent,
   ],
   imports: [
     BrowserModule,

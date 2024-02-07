@@ -1,6 +1,6 @@
 <div class="navigation-item-wrapper" *ngIf="navItem.subNavigation && navItem.title=='Gedichte'">
-    <div class="navigation-item" role="button" (click)="togglePanel(navItem.title)">
-        <h4 id="navigation-item-title">
+    <div class="navigation-item">
+        <h4 id="navigation-item-title" role="button" routerLink={{navItem.route}}>
             {{navItem.title}}
         </h4>
     </div>
@@ -23,9 +23,12 @@
     </div>
     <div  class="flex-navigation-subNavigation">
         <div *ngFor="let subNav of navItem.subNavigation" class="flex-navigation-subNavigation-item-container">
-            <div class="flex-item-container">
-                <button class="nav-item" type="button" routerLink={{subNav.route}} (click)="changeData(subNav.title)">{{subNav.title}}</button>
+            <div class="flex-item-container" *ngIf="navItem.title=='Über mich'; else alternativeItemContainer">
+                <button class="flex-nav-item-about" type="button" routerLink={{subNav.route}} (click)="changeData(subNav.title)">{{subNav.title}}</button>
             </div>
+            <ng-template #alternativeItemContainer>
+                <button class="flex-nav-item" type="button" routerLink={{subNav.route}} (click)="changeData(subNav.title)">{{subNav.title}}</button>
+            </ng-template>
         </div>
     </div>
 </div>

@@ -17,7 +17,7 @@ export class NavigationComponent {
 
   navItems: NavigationItem[] = [
     {
-      title: 'Gedichte', subNavigation: [
+      title: 'Gedichte', route:'/poems/all', subNavigation: [
         { title: 'Leben', route: '/poems/life' },
         { title: 'Liebe', route: '/poems/love' },
         { title: 'Erotisches', route: '/poems/erotics' },

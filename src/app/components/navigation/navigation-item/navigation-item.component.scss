@@ -54,9 +54,32 @@ text-align: center;
     border: none;
     background-color: white;
     font-size: 1.3rem;
+    padding: 0;
 }
 
 .nav-item:hover{
     background-color: whitesmoke;
     border-radius: .5rem;
+}
+
+.flex-nav-item{
+    border: none;
+    background-color: white;
+    font-size: 1.3rem;
+    padding: 0;
+}
+
+.flex-nav-item:hover{
+    background-color: whitesmoke;
+}
+
+.flex-nav-item-about{
+    border: none;
+    background-color: white;
+    font-size: 1.15rem;
+    padding: 0;
+}
+
+.flex-nav-item-about:hover{
+    background-color: whitesmoke;
 }

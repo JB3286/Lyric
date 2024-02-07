@@ -18,7 +18,7 @@
 
 #directory {
     width: 100%;
-    text-align: center;
+    text-align: left;
 }
 
 #directory-head-row-table-of-content {
@@ -31,7 +31,6 @@
     justify-content: center;
     align-items: center;
 }
-
 
 #directory tr,
 th,
@@ -52,11 +51,6 @@ td {
     padding-bottom: 2.5rem;
 }
 
-.directory-row th,
-td {
-    width: 25rem;
-}
-
 #sortButtonHead span {
     font-size: 1rem;
 }
@@ -72,7 +66,6 @@ td {
 .dataChanger {
     border: none;
     background-color: white;
-    padding: .5rem;
     align-items: center;
 }
 

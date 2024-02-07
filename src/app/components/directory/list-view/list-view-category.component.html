@@ -16,7 +16,7 @@
                 </tr>
                 <tr>
                     <th class="filterSlot">
-                        <div id="dateChanger">
+                        <div class="dateChanger">
                             <button class="dataChanger" type="button" 
                                 (click)="sortTitleAscending(this.categoryItems)"><span id="dropdown-icon">a-Z</span>
                             </button>
@@ -64,9 +64,9 @@
             </thead>
             <tbody *ngFor="let item of categoryItems; let i = index;">
                 <tr class="directory-row">
-                    <td>{{item.title}}</td>
-                    <td>{{item.category}}</td>
-                    <td>{{item.date}}</td>
+                    <td class="title-cell">{{item.title}}</td>
+                    <td class="category-cell">{{item.category}}</td>
+                    <td class="date-cell">{{item.date}}</td>
                 </tr>
             </tbody>
         </table>

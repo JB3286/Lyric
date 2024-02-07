@@ -1,7 +1,4 @@
 <div class="navigation-wrapper">
-    <navigation-item *ngFor="let navItem of navItems" [navItem]="navItem" routerLink={{navItem.route}}></navigation-item>
+    <navigation-item class="nav-item" *ngFor="let navItem of navItems" [navItem]="navItem" routerLink={{navItem.route}}>
+    </navigation-item>
 </div>
-
-
-
-    

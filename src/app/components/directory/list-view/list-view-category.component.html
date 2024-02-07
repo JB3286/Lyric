@@ -1,25 +1,75 @@
 <div id="list-view-wrapper">
+    <side-nav></side-nav>
     <div id="list-view">
         <table id="directory">
             <thead>
-                <tr class="directory-row">
-                    <th colspan="3">{{category}}</th>
+                <tr class="directory-row" id="title-row">
+                    <th class="directory-head-row-content" id="directory-head-row-table-of-content" colspan="4">
+                        Inhalt</th>
                 </tr>
                 <tr class="directory-row">
-                    <th class="directory-head-row-content">ID</th>
                     <th class="directory-head-row-content">Titel</th>
+                    <th class="directory-head-row-content">Kategorie</th>
                     <th class="directory-head-row-content">verfasst am:</th>
                 </tr>
                 <tr class="directory-row">
                 </tr>
+                <tr>
+                    <th class="filterSlot">
+                        <div id="dateChanger">
+                            <button class="dataChanger" type="button" 
+                                (click)="sortTitleAscending(this.categoryItems)"><span id="dropdown-icon">a-Z</span>
+                            </button>
+                        </div>
+                    </th>
+                    <th class="filterSlot">
+                        <div class="dropdown" id="dropdown-container" *ngIf="filteredEntries==false">
+                            <button class="dropdown-toggle" id="categoryChanger" type="button"
+                                data-bs-toggle="dropdown">
+                                Kategorien
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" role="button" (click)="changeCategory('Leben')">Leben</a>
+                                </li>
+                                <li><a class="dropdown-item" role="button" (click)="changeCategory('Liebe')">Liebe</a>
+                                </li>
+                                <li><a class="dropdown-item" role="button"
+                                        (click)="changeCategory('Erotisches')">Erotisches</a></li>
+                                <li><a class="dropdown-item" role="button"
+                                        (click)="changeCategory('Philosophisches')">Philosophisches</a></li>
+                                <li><a class="dropdown-item" role="button" (click)="changeCategory('Tod')">Tod</a></li>
+                            </ul>
+                        </div>
+                        <div *ngIf="filteredEntries==true">
+                            <button class="dataChanger" type="button" id="filterRemover"
+                                (click)="removeFilter();"><span>Auswahl entfernen</span></button>
+                        </div>
+                    </th>
+                    <th class="filterSlot" id="sortButtonHead">
+                        <div class="dateChanger">
+                            <button class="dataChanger" type="button" *ngIf="dateAscending==true;"
+                                (click)="dateSorter();"><span id="dropdown-icon">Datum<img class="dropdown-icon"
+                                        src="../../../../assets/icons/dropdown-arrow-up.png"
+                                         /></span>
+                            </button>
+                        </div>
+                        <div class="dateChanger">
+                            <button class="dataChanger" type="button" *ngIf="dateAscending==false;"
+                                (click)="dateSorter();"><span id="dropdown-icon">Datum<img class="dropdown-icon"
+                                        src="../../../../assets/icons/dropdown-arrow-down.png"/></span>
+                            </button>
+                        </div>
+                    </th>
+                </tr>
             </thead>
-            <tbody *ngFor="let item of categoryItems">
+            <tbody *ngFor="let item of categoryItems; let i = index;">
                 <tr class="directory-row">
-                    <td>{{item.id}}</td>
                     <td>{{item.title}}</td>
+                    <td>{{item.category}}</td>
                     <td>{{item.date}}</td>
                 </tr>
             </tbody>
         </table>
     </div>
+    <footer></footer>
 </div>

@@ -31,11 +31,10 @@ export class PoemComponent implements OnInit {
     return;
   }
 
-  isOdd(array: Poem[]): void { 
-    if(array.length%2 == 0)
+  isOdd(array: Poem[]): void {
+    if (array.length % 2 == 0)
       !this.odd;
-      console.log(this.odd);
-      this.odd = false;
+    this.odd = false;
   }
 
   indexDown(): void {
@@ -60,8 +59,6 @@ export class PoemComponent implements OnInit {
       this.poems = [];
       this.poems = this.service.getPoemsByCategory(this.category);
       this.isOdd(this.poems);
-      console.log(data);
-      console.log(this.poems);
     });
   }
 

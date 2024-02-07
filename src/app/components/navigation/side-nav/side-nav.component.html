@@ -1,26 +1,29 @@
 <div id="side-nav-wrapper">
   <div>
-    <button class="side-nav-container-item" type="button">Alle Gedichte</button>
+    <button class="side-nav-container-item" type="button" routerLink="/home">Home</button>
+  </div>
+  <div>
+    <button class="side-nav-container-item" type="button" routerLink="/poems/all" (click)="listView();">Alle Gedichte</button>
   </div>
   <div class="dropdown" id="dropdown-container">
     <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown">
       Kategorien
     </button>
     <ul class="dropdown-menu">
-      <li><a class="dropdown-item" role="button" (click)="setCategory('Leben')">Leben</a></li>
-      <li><a class="dropdown-item" role="button" (click)="setCategory('Liebe')">Liebe</a></li>
-      <li><a class="dropdown-item" role="button" (click)="setCategory('Erotisches')">Erotisches</a></li>
-      <li><a class="dropdown-item" role="button" (click)="setCategory('Philosophisches')">Philosophisches</a></li>
-      <li><a class="dropdown-item" role="button" (click)="setCategory('Tod')">Tod</a></li>
+      <li><a class="dropdown-item" role="button" (click)="setCategory('Leben')" routerLink="/poems/life">Leben</a></li>
+      <li><a class="dropdown-item" role="button" (click)="setCategory('Liebe')" routerLink="/poems/love">Liebe</a></li>
+      <li><a class="dropdown-item" role="button" (click)="setCategory('Erotisches')" routerLink="/poems/erotics">Erotisches</a></li>
+      <li><a class="dropdown-item" role="button" (click)="setCategory('Philosophisches')" routerLink="/poems/philosophics">Philosophisches</a></li>
+      <li><a class="dropdown-item" role="button" (click)="setCategory('Tod')" routerLink="/poems/death">Tod</a></li>
     </ul>
   </div>
   <div>
-    <button class="side-nav-container-item" type="button">Über mich</button>
+    <button class="side-nav-container-item" type="button" routerLink="about">Über mich</button>
   </div>
   <div>
-    <button class="side-nav-container-item" type="button">Kommentare</button>
+    <button class="side-nav-container-item" type="button" routerLink="comments">Kommentare</button>
   </div>
   <div>
-    <button class="side-nav-container-item" type="button">Kontakt</button>
+    <button class="side-nav-container-item" type="button" routerLink="contact">Kontakt</button>
   </div>
 </div>

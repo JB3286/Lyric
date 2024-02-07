@@ -1,36 +1,109 @@
-#list-view-wrapper{
+#list-view-wrapper {
+    width: 100vw;
+    min-height: 100vh;
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
+    gap: 4rem;
 }
 
-#list-view{
-    width: 70%;
+#list-view {
+    width: 100%;
+    display: grid;
+    justify-content: center;
 }
 
-#list-view-category{
+#list-view-category {
     padding: .5rem;
 }
 
-#directory{
+#directory {
     width: 100%;
     text-align: center;
 }
 
-#directory tr,th,td{
+#directory-head-row-table-of-content {
+    text-align: center;
+    border: none;
+}
+
+#dateChanger {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#directory tr,
+th,
+td {
     padding: .5rem;
 }
 
-#directory-body-title{
-    width: fit-content;
+#directory th {
+    font-weight: 100;
+    font-size: 1.6rem;
 }
 
-.directory-row th,td{
-    width: fit-content;
+#directory-head-row-table-of-content tr {
+    border-bottom: 0px solid white;
 }
 
-.directory-row td{
+.directory-row #directory-head-row-table-of-content {
+    padding-bottom: 2.5rem;
 }
 
-#directory-head-row-empty{
+.directory-row th,
+td {
+    width: 25rem;
 }
 
+#sortButtonHead span {
+    font-size: 1rem;
+}
+
+.sortButtonHead {
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.dataChanger {
+    border: none;
+    background-color: white;
+    padding: .5rem;
+    align-items: center;
+}
+
+.dataChanger:hover{
+    background-color: whitesmoke;
+}
+
+.dataChanger #dropdown-icon {
+    font-size: 1rem;
+}
+
+.dataChanger button {
+    padding: 0;
+}
+
+#filterRemover {
+    font-size: 1rem;
+}
+
+#categoryChanger {
+    border: none;
+    background-color: white;
+    font-size: 1rem;
+    padding: 0;
+}
+
+.dropdown-icon {
+    height: 1.2rem;
+    width: 1.2rem;
+}
+
+.directory-row td {}
+
+#directory-head-row-empty {}

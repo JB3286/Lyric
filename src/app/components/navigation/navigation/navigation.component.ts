@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { NavigationItem } from '../../../types/navigation-item';
+import { DataInterchangeService } from '../../../services/data-interchange.service';
+
 @Component({
   selector: 'navigation',
   templateUrl: './navigation.component.html',
@@ -9,32 +11,46 @@ import { NavigationItem } from '../../../types/navigation-item';
 
 export class NavigationComponent {
 
-  
-  constructor(private routes: Router){}
+  category = '';
 
-  navItems: NavigationItem[]  = [
-    {title:'Gedichte',subNavigation: [
-      {title:'Leben',route:'poems/life'},
-      {title:'Liebe',route:'poems/love'},
-      {title:'Erotisches',route:'poems/erotics'},
-      {title:'Philosophisches',route:'poems/philosophics'},
-      {title:'Religiöses',route:'poems/religious'},
-      {title:'Tod',route:'poems/death'},
-      {title:'Inhaltsverzeichnis',route:'poems/content'},
-      {title:'Anhang',route:'poems/appendix'},
-    ]},
-    {title:'Über mich', route:'about',subNavigation: [
-      {title:'Zu den Gedichten'},
-      {title:'Lesungen',route:'about/readings'}
-    ]},
-    {title:'Kommentar',subNavigation:[
-      {title:'Über den Bildkünstler',route:'comment/artist'},
-      {title:'Über den Webdesigner', route:'comment/programmer'}
-    ]},
-    {title:'Mail',route:'contact'},
+  constructor(private routes: Router, private interChange: DataInterchangeService) { }
+
+  navItems: NavigationItem[] = [
+    {
+      title: 'Gedichte', subNavigation: [
+        { title: 'Leben', route: '/poems/life' },
+        { title: 'Liebe', route: '/poems/love' },
+        { title: 'Erotisches', route: '/poems/erotics' },
+        { title: 'Philosophisches', route: '/poems/philosophics' },
+        { title: 'Religiöses', route: '/poems/religious' },
+        { title: 'Tod', route: '/poems/death' },
+        { title: 'Personifiziertes', route: '/poems/humans' },
+        { title: 'Lesungen', route: '/poems/readings' },
+        { title: 'Inhaltsverzeichnis', route: '/poems/all' },
+        { title: 'Anhang', route: '/poems/appendix' },
+      ]
+    },
+    {
+      title: 'Über mich', subNavigation: [
+        
+        { title: 'Zu den Gedichten', route: '/about/poems' },
+      ]
+    },
+    { title: 'Über den',subNavigation:[
+      {title: 'Bildkünstler', route:'/about/artist'},
+      {title: 'Webentwickler', route:'/about/programmer'}
+    ] },
+    
+    { title: 'Kommentar', route: '/comments' },
+    
+
   ];
 
-  ngOnInit():void{
+  changeData(data: string) {
+    this.interChange.changeData(data);
+  }
+
+  ngOnInit(): void {
   }
 }
 

@@ -17,6 +17,15 @@ export class SideNavComponent implements OnInit {
     this.dataInterchange.changeData(value);
   }
 
+  listView(){
+    this.dataInterchange.setToList(true);
+  }
+  
+  hideListView():void{
+    this.dataInterchange.setToList(false);
+  }
+
+
   ngOnInit(): void{
     this.dataInterchange.data$.subscribe(data =>{
       this.category = data;

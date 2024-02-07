@@ -20,20 +20,55 @@ const routes: Routes = [
     component: LandingPageComponent
   },
   {
-    path: 'poems',
-    title: 'poems',
+    path: 'poems/all',
+    title: 'Auflistung',
     component: ListViewCategoryComponent
   },
   {
-    path: 'poems/leben',
+    path: 'poems/life',
     title: 'Leben',
+    component: PoemComponent,
+  },
+  {
+    path: 'poems/love',
+    title: 'Liebe',
+    component: PoemComponent,
+  },
+  {
+    path: 'poems/erotics',
+    title: 'Erotik',
+    component: PoemComponent,
+  },
+  {
+    path: 'poems/philosophics',
+    title: 'Philosophisches',
+    component: PoemComponent,
+  },
+  {
+    path: 'poems/humans',
+    title: 'Menschen',
+    component: PoemComponent,
+  },
+  {
+    path: 'poems/death',
+    title: 'Tod',
     component: PoemComponent,
   },
   {
     path: 'about',
     title: 'Über mich',
     component: AboutComponent
-  }
+  },
+  {
+    path: 'comments',
+    title: 'Kommentare',
+    component: AboutComponent
+  },
+  {
+    path: 'mail',
+    title: 'E-mail',
+    component: AboutComponent
+  },
 
 ];
 @NgModule({

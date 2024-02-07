@@ -1,26 +1,31 @@
 .landing-page-wrapper{
-    width: 100vw;
+    width: 100%;
     min-height: 100vh;
     display: grid;
-    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-rows: auto auto auto;
+    row-gap: 4.5rem;
+    justify-content: center;
 }
 
 .header-img{
-    margin: 3rem auto;
+    width: 100%;    
+    display: grid;
+    justify-content: center;
+    margin-top: 9.25rem;
 }
 
 .header-img img{
-    width: 95vw;
-    height: 350px;
-    border-radius: .25rem;
+    width: 82.5vw;
+    height: 336px;
+    border-radius: .5rem;
 }
 
 #landing-page-author-domain-container{
     width: 100%;
     display: grid;
     justify-content: center;
-    row-gap: 3rem;
-    margin-top: 5rem;
+    row-gap: 5rem;
+    margin-top: 4rem;
 }
 
 .landing-page-author-domain{
@@ -32,27 +37,18 @@
     padding: 0;
     margin: 0;
     text-align: center;
+    font-size: 4.5rem;
 }
 
 .landing-page-author-domain h4{
     padding: 0;
-    margin: 0;
+    margin-bottom: 4rem;
     text-align: center;
-
+    font-size: 3.5rem;
 }
 
 #author-container{
-
 }
 
 #domain-container{
-
-}
-
-navigation{
-    margin-top: 5rem;
-}
-
-footer{
-    margin-top: 10rem;
 }

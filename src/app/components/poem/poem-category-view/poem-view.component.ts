@@ -10,5 +10,9 @@ export class PoemViewComponent {
 
   @Input() inputPoem: Poem = {} as Poem;
 
+
+
+
+  
   constructor() {  }
 }

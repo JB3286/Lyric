@@ -3,9 +3,9 @@
     min-height: 100vh;
     display: grid;
     grid-template-rows: auto auto auto;
-    grid-template-columns: 10% auto 10%;
+    grid-template-columns: 5% 90% 5%;
     justify-content: center;
-    gap: 2rem;
+    gap: 4rem;
 }
 
 #poem-content-wrapper {
@@ -13,6 +13,8 @@
     justify-content: space-evenly;
     grid-row: 2;
     grid-column: 2;
+    width: 80%;
+    justify-self: center;
 }
 
 side-nav {
@@ -26,9 +28,17 @@ footer {
     padding: .5rem;
 }
 
+#router-outlet{
+    grid-row: 2;
+    grid-column: 2;
+    margin: 0 auto;
+}
+
 #poem-left {
     grid-row: 2;
     grid-column: 2;
+    justify-self: center;
+    margin: 0 auto;
 }
 
 #poem-right {
@@ -36,11 +46,17 @@ footer {
     grid-column: 2;
 }
 
+#last-poem{
+    grid-row: 2;
+    grid-column: 2;
+    justify-content: center;
+}
+
 .nav-arrow {
-    font-size: 2rem;
+    font-size: 3rem;
     padding: .5rem;
     margin: 1rem;
-    margin-top: 15rem;
+    margin-top: 35rem;
     display: flex;
 }
 

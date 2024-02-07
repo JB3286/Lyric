@@ -1,11 +1,30 @@
-<div id="navigation-item-wrapper">
-    <div class="navigation-item">
+<div class="navigation-item-wrapper" *ngIf="navItem.subNavigation && navItem.title=='Gedichte'">
+    <div class="navigation-item" role="button" (click)="togglePanel(navItem.title)">
         <h4 id="navigation-item-title">
             {{navItem.title}}
         </h4>
-        <div *ngIf="navItem.subNavigation" class="navigation-subNavigation">
-            <div *ngFor="let subNav of navItem.subNavigation " class="navigation-subNavigation-item-container">
-                <navigation-item class="subNavigation-item" [navItem]="subNav" routerLink={{subNav.route}}></navigation-item> 
+    </div>
+    <!--Container mit ID==Title versehen -->
+    <div class="navigation-subNavigation">
+        <div *ngFor="let subNav of navItem.subNavigation ">
+            <div class="navigation-subNavigation-item-container">
+                <div class="item-container">
+                    <button class="nav-item" type="button" routerLink={{subNav.route}} (click)="changeData(subNav.title)">{{subNav.title}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="navItem.subNavigation && navItem.title!='Gedichte'" class="flex-navigation-item-wrapper">
+    <div class="flex-navigation-item" role="button">
+        <h4 id="flex-navigation-item-title">
+            {{navItem.title}}
+        </h4>
+    </div>
+    <div  class="flex-navigation-subNavigation">
+        <div *ngFor="let subNav of navItem.subNavigation" class="flex-navigation-subNavigation-item-container">
+            <div class="flex-item-container">
+                <button class="nav-item" type="button" routerLink={{subNav.route}} (click)="changeData(subNav.title)">{{subNav.title}}</button>
             </div>
         </div>
     </div>

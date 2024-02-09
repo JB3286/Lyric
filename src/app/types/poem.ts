@@ -4,9 +4,7 @@ export interface Poem {
     category: string,
     title: string,
     subtitle?: string;
-    content: string[
-
-    ],
+    content: string[],
     comments?: string[],
 }
 

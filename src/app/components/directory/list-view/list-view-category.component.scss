@@ -4,12 +4,15 @@
     display: flex;
     flex-direction: column;
     gap: 4rem;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
 }
 
 #list-view {
-    width: 100%;
+    width: 75vw;
     display: grid;
     justify-content: center;
+    margin: 0 auto;
 }
 
 #list-view-category {
@@ -17,8 +20,40 @@
 }
 
 #directory {
-    width: 100%;
+    width: inherit;
     text-align: left;
+    margin: 0 auto;
+}
+
+.directory-head-row th{
+    
+    padding-bottom: 1.5rem;
+}
+#directory th {
+    font-weight: 100;
+}
+
+#directory-head-row-table-of-content{
+    font-size:1.6rem;
+}
+
+.directory-head-row-empty{
+}
+
+.directory-head-row-content-title{
+    width: 10%;
+    font-size: 1.3rem;    
+    
+}
+
+.directory-head-row-content-category{
+    width: 9.4%;
+    font-size: 1.3rem;
+}
+
+.directory-head-row-content-writtenOn{
+    width: 1.3%;
+    font-size: 1.3rem;
 }
 
 #directory-head-row-table-of-content {
@@ -35,12 +70,13 @@
 #directory tr,
 th,
 td {
-    padding: .5rem;
+    padding: .3rem;
 }
 
-#directory th {
-    font-weight: 100;
-    font-size: 1.6rem;
+
+.directory-body-row:hover{
+    background-color: whitesmoke;
+    cursor: pointer;
 }
 
 #directory-head-row-table-of-content tr {
@@ -48,7 +84,7 @@ td {
 }
 
 .directory-row #directory-head-row-table-of-content {
-    padding-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
 }
 
 #sortButtonHead span {
@@ -77,12 +113,13 @@ td {
     font-size: 1rem;
 }
 
-.dataChanger button {
+.dataChanger{
     padding: 0;
 }
 
 #filterRemover {
     font-size: 1rem;
+    padding: 0;
 }
 
 #categoryChanger {
@@ -92,11 +129,11 @@ td {
     padding: 0;
 }
 
+#categoryChanger:hover{
+    background-color: whitesmoke;
+}
+
 .dropdown-icon {
     height: 1.2rem;
     width: 1.2rem;
 }
-
-.directory-row td {}
-
-#directory-head-row-empty {}

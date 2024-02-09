@@ -25,9 +25,9 @@ export class NavigationComponent {
         { title: 'Religiöses', route: '/poems/religious' },
         { title: 'Tod', route: '/poems/death' },
         { title: 'Personifiziertes', route: '/poems/humans' },
-        { title: 'Lesungen', route: '/poems/readings' },
-        { title: 'Inhaltsverzeichnis', route: '/poems/all' },
         { title: 'Anhang', route: '/poems/appendix' },
+        { title: 'Inhaltsverzeichnis', route: '/poems/all' },
+        { title: 'Lesungen', route: '/poems/readings' },
       ]
     },
     {

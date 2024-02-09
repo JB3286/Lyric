@@ -4,14 +4,23 @@
             {{navItem.title}}
         </h4>
     </div>
-    <!--Container mit ID==Title versehen -->
     <div class="navigation-subNavigation">
         <div *ngFor="let subNav of navItem.subNavigation ">
             <div class="navigation-subNavigation-item-container">
                 <div class="item-container">
-                    <button class="nav-item" type="button" routerLink={{subNav.route}} (click)="changeData(subNav.title)">{{subNav.title}}</button>
+                    <button
+                        *ngIf="subNav.title!='Anhang' && subNav.title!='Inhaltsverzeichnis' && subNav.title!='Lesungen'"
+                        class="nav-item" type="button" routerLink={{subNav.route}}
+                        (click)="changeData(subNav.title)">{{subNav.title}}</button>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="navigation-subnavigation-appendix">
+        <div *ngFor="let subNav of navItem.subNavigation.reverse()" class="item-container-appendix">
+            <button *ngIf="subNav.title=='Anhang' || subNav.title=='Inhaltsverzeichnis' || subNav.title=='Lesungen'"
+                class="nav-item" type="button" routerLink={{subNav.route}}
+                (click)="changeData(subNav.title)">{{subNav.title}}</button>
         </div>
     </div>
 </div>
@@ -21,13 +30,15 @@
             {{navItem.title}}
         </h4>
     </div>
-    <div  class="flex-navigation-subNavigation">
-        <div *ngFor="let subNav of navItem.subNavigation" class="flex-navigation-subNavigation-item-container">
+    <div class="flex-navigation-subNavigation">
+        <div *ngFor="let subNav of navItem.subNavigation" class="flex-navigation-subNavigation-item-about-container">
             <div class="flex-item-container" *ngIf="navItem.title=='Über mich'; else alternativeItemContainer">
-                <button class="flex-nav-item-about" type="button" routerLink={{subNav.route}} (click)="changeData(subNav.title)">{{subNav.title}}</button>
+                <button class="flex-nav-item-about" type="button" routerLink={{subNav.route}}
+                    (click)="changeData(subNav.title)">{{subNav.title}}</button>
             </div>
-            <ng-template #alternativeItemContainer>
-                <button class="flex-nav-item" type="button" routerLink={{subNav.route}} (click)="changeData(subNav.title)">{{subNav.title}}</button>
+            <ng-template #alternativeItemContainer class="flex-navigation-subNavigation-item-container">
+                <button class="flex-nav-item" type="button" routerLink={{subNav.route}}
+                    (click)="changeData(subNav.title)">{{subNav.title}}</button>
             </ng-template>
         </div>
     </div>

@@ -66,9 +66,5 @@ export class PoemComponent implements OnInit {
     this.setCategory();
   }
 
-  mapPoems() {
-
-  }
-
 }
 

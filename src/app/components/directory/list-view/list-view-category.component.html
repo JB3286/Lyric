@@ -5,65 +5,69 @@
             <thead>
                 <tr class="directory-row" id="title-row">
                     <th class="directory-head-row-content" id="directory-head-row-table-of-content" colspan="4">
-                        Inhalt</th>
+                        Inhaltsverzeichnis</th>
                 </tr>
-                <tr class="directory-row">
-                    <th class="directory-head-row-content">Titel</th>
-                    <th class="directory-head-row-content">Kategorie</th>
-                    <th class="directory-head-row-content">verfasst am:</th>
-                </tr>
-                <tr class="directory-row">
+                <tr class="directory-head-row-empty">
+                    <th></th>
                 </tr>
                 <tr>
                     <th class="filterSlot">
                         <div class="dateChanger">
-                            <button class="dataChanger" type="button" 
-                                (click)="sortTitleAscending(this.categoryItems)"><span id="dropdown-icon">a-Z</span>
-                            </button>
-                        </div>
-                    </th>
-                    <th class="filterSlot">
-                        <div class="dropdown" id="dropdown-container" *ngIf="filteredEntries==false">
-                            <button class="dropdown-toggle" id="categoryChanger" type="button"
-                                data-bs-toggle="dropdown">
-                                Kategorien
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" role="button" (click)="changeCategory('Leben')">Leben</a>
-                                </li>
-                                <li><a class="dropdown-item" role="button" (click)="changeCategory('Liebe')">Liebe</a>
-                                </li>
-                                <li><a class="dropdown-item" role="button"
-                                        (click)="changeCategory('Erotisches')">Erotisches</a></li>
-                                <li><a class="dropdown-item" role="button"
-                                        (click)="changeCategory('Philosophisches')">Philosophisches</a></li>
+                            <button class="dataChanger" type="button"
+                            (click)="sortTitleAscending(this.categoryItems)"><span id="dropdown-icon">A-Z</span>
+                        </button>
+                    </div>
+                </th>
+                <th class="filterSlot">
+                    <div class="dropdown" id="dropdown-container" *ngIf="filteredEntries==false">
+                        <button class="dropdown" id="categoryChanger" type="button"
+                        data-bs-toggle="dropdown">
+                        Kategorien
+                    </button>
+                    <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" role="button" (click)="changeCategory('Leben')">Leben</a></li>
+                                <li><a class="dropdown-item" role="button" (click)="changeCategory('Liebe')">Liebe</a></li>
+                                <li><a class="dropdown-item" role="button" (click)="changeCategory('Erotisches')">Erotisches</a></li>
+                                <li><a class="dropdown-item" role="button" (click)="changeCategory('Philosophisches')">Philosophisches</a></li>
+                                <li><a class="dropdown-item" role="button" (click)="changeCategory('Religiöses')">Religiöses</a></li>
                                 <li><a class="dropdown-item" role="button" (click)="changeCategory('Tod')">Tod</a></li>
+                                <li><a class="dropdown-item" role="button" (click)="changeCategory('Personifiziertes')">Personifiziertes</a></li>
                             </ul>
                         </div>
                         <div *ngIf="filteredEntries==true">
                             <button class="dataChanger" type="button" id="filterRemover"
-                                (click)="removeFilter();"><span>Auswahl entfernen</span></button>
+                            (click)="removeFilter();"><span>Auswahl entfernen</span></button>
                         </div>
                     </th>
                     <th class="filterSlot" id="sortButtonHead">
                         <div class="dateChanger">
                             <button class="dataChanger" type="button" *ngIf="dateAscending==true;"
-                                (click)="dateSorter();"><span id="dropdown-icon">Datum<img class="dropdown-icon"
-                                        src="../../../../assets/icons/dropdown-arrow-up.png"
-                                         /></span>
+                            (click)="dateSorter();"><span id="dropdown-icon">Datum<img class="dropdown-icon"
+                                src="../../../../assets/icons/dropdown-arrow-up.png" /></span>
                             </button>
                         </div>
                         <div class="dateChanger">
                             <button class="dataChanger" type="button" *ngIf="dateAscending==false;"
-                                (click)="dateSorter();"><span id="dropdown-icon">Datum<img class="dropdown-icon"
-                                        src="../../../../assets/icons/dropdown-arrow-down.png"/></span>
+                            (click)="dateSorter();"><span id="dropdown-icon">Datum<img class="dropdown-icon"
+                                src="../../../../assets/icons/dropdown-arrow-down.png" /></span>
                             </button>
                         </div>
                     </th>
                 </tr>
+                <tr>
+                    <th></th>
+                </tr>
+                <tr class="directory-head-row">
+                    <th class="directory-head-row-content-title">Titel</th>
+                    <th class="directory-head-row-content-category">Kategorie</th>
+                    <th class="directory-head-row-content-writtenOn">verfasst am</th>
+                </tr>
+                <tr class="directory-head-row-empty">
+                    <th></th>
+                </tr>
             </thead>
             <tbody *ngFor="let item of categoryItems; let i = index;">
-                <tr class="directory-row">
+                <tr class="directory-body-row" routerLink='/poems/{{item.id}}'>
                     <td class="title-cell">{{item.title}}</td>
                     <td class="category-cell">{{item.category}}</td>
                     <td class="date-cell">{{item.date}}</td>
@@ -71,5 +75,4 @@
             </tbody>
         </table>
     </div>
-    <footer></footer>
 </div>

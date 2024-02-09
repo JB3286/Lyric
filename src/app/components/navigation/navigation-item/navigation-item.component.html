@@ -32,10 +32,8 @@
     </div>
     <div class="flex-navigation-subNavigation">
         <div *ngFor="let subNav of navItem.subNavigation" class="flex-navigation-subNavigation-item-about-container">
-            <div class="flex-item-container" *ngIf="navItem.title=='Über mich'; else alternativeItemContainer">
-                <button class="flex-nav-item-about" type="button" routerLink={{subNav.route}}
+            <button class="flex-nav-item-about" *ngIf="navItem.title=='Über mich'; else alternativeItemContainer"type="button" routerLink={{subNav.route}}
                     (click)="changeData(subNav.title)">{{subNav.title}}</button>
-            </div>
             <ng-template #alternativeItemContainer class="flex-navigation-subNavigation-item-container">
                 <button class="flex-nav-item" type="button" routerLink={{subNav.route}}
                     (click)="changeData(subNav.title)">{{subNav.title}}</button>

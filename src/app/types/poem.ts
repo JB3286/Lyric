@@ -1,6 +1,6 @@
 export interface Poem {
     id?: string,
-    date?: string,
+    date?: Date,
     category: string,
     title: string,
     subtitle?: string;

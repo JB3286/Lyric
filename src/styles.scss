@@ -1,3 +1,6 @@
+@import '../node_modules/quill/dist/quill.core.css';
+@import '../node_modules/quill/dist/quill.snow.css';
+
 @font-face{
     font-family:"Adelia";
     src:url('./fonts/adelia/adelia.ttf');
@@ -69,4 +72,3 @@ body{
     height: 100%;
     font-size: 1.6rem;
 }
-

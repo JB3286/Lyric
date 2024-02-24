@@ -1,6 +1,6 @@
 export interface ListItem {
     id?: string,
-    date: string,
+    date: Date,
     title: string,
     category: string,
 }

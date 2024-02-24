@@ -70,7 +70,7 @@
                 <tr class="directory-body-row" routerLink='/poems/{{item.id}}'>
                     <td class="title-cell">{{item.title}}</td>
                     <td class="category-cell">{{item.category}}</td>
-                    <td class="date-cell">{{item.date}}</td>
+                    <td class="date-cell">{{item.date | date: "dd.MM.YYYY" }}</td>
                 </tr>
             </tbody>
         </table>

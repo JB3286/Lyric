@@ -5,6 +5,7 @@ import { LandingPageComponent } from './components/landingPage/landingPage.compo
 import { PoemViewComponent } from './components/poem/poem-category-view/poem-view.component';
 import { PoemComponent } from './components/poem/poem/poem.component';
 import { ListViewCategoryComponent } from './components/directory/list-view/list-view-category.component';
+import { CreatePoemComponent } from './admin/create-poem/create-poem.component';
 
 
 
@@ -21,7 +22,7 @@ const routes: Routes = [
   },
   {
     path: 'poems/all',
-    title: 'Auflistung',
+    title: 'Inhaltsverzeichnis',
     component: ListViewCategoryComponent
   },
   {
@@ -36,7 +37,7 @@ const routes: Routes = [
   },
   {
     path: 'poems/erotics',
-    title: 'Erotik',
+    title: 'Erotisches',
     component: PoemComponent,
   },
   {
@@ -46,7 +47,7 @@ const routes: Routes = [
   },
   {
     path: 'poems/humans',
-    title: 'Menschen',
+    title: 'Personifiziertes',
     component: PoemComponent,
   },
   {
@@ -69,6 +70,11 @@ const routes: Routes = [
     title: 'E-mail',
     component: AboutComponent
   },
+  {
+    path: 'admin',
+    title: 'Administration',
+    component: CreatePoemComponent
+  }
 
 ];
 @NgModule({

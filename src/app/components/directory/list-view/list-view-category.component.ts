@@ -49,7 +49,7 @@ export class ListViewCategoryComponent {
     console.log('Iam Ascending');
     this.dateAscending = true;
     return this.categoryItems = items.sort(function(a,b) :number{
-      return a.date.localeCompare(b.date);
+      return a.date.getTime()-b.date.getTime();
     })
   }
 
@@ -57,7 +57,7 @@ export class ListViewCategoryComponent {
     console.log('Iam Descending');
     this.dateAscending = false;
     return items.sort(function(a,b) :number{
-      return b.date.localeCompare(a.date);
+      return b.date.getTime()-a.date.getTime();
     })
   }
 

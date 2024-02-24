@@ -31,7 +31,7 @@ export class NavigationComponent {
       ]
     },
     {
-      title: 'Über mich', subNavigation: [
+      title: 'Über mich', route: '/about', subNavigation: [
         
         { title: 'Zu den Gedichten', route: '/about/poems' },
       ]

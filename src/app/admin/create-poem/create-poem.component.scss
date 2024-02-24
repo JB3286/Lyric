@@ -1,0 +1,5 @@
+@import '../../../../node_modules/quill/dist/quill.bubble.css';
+
+.content-editor:focus{
+    border: 3px solid black;
+}

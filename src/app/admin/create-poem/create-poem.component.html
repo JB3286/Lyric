@@ -1,2 +1,34 @@
-<p>create-poem works!</p>
-<quill-editor class="content-editor" [placeholder]="''" [modules]="toolbarConfig" [styles]="{'min-height': '12rem', 'min-width': '100rem'}"></quill-editor>
+<div id="create-wrapper">
+    <div>
+        <h2 id="header">Gedicht posten</h2>
+    </div>
+    <form [formGroup]="createPoem" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="title">Titel</label>
+            <input type="text" class="form-control" id="title" placeholder="Titel" formControlName="title" />
+        </div>
+        <div class="form-group">
+            <label for="date">verfasst am:</label>
+            <input type="date" class="form-control" id="date" placeholder="Titel" formControlName="date" />
+        </div>
+        <div class="form-group">
+            <label for="category">Kategorie</label>
+            <input type="text" class="form-control" id="category" placeholder="Kategorie" formControlName="category" />
+        </div>
+        <div class="form-group">
+            <label for="rte">Text</label>
+            <angular-editor id="rte" [config]="editorConfig" formControlName="content"></angular-editor>
+        </div>
+        <div class="form-group">
+            <label for="comment">Kommentar</label>
+            <input type="text" id="comment" class="form-control" placeholder="Kommentar" formControlName="comment">
+        </div>
+        <button [disabled]="!createPoem.valid" type="submit" class="btn btn-primary">senden</button>
+    </form>
+    <div id="content" [innerHtml]="poem.content">
+        <pre>{{poem.content}}</pre>
+    </div>
+    <div>
+        <p>{{createPoem.value|json}}</p>
+    </div>
+</div>

@@ -3,6 +3,7 @@ import { ListItem } from '../../../types/list-item';
 import { PoemService } from '../../../services/poem.service';
 import { Poem } from '../../../types/poem';
 import { DataInterchangeService } from '../../../services/data-interchange.service';
+import { parse } from 'date-fns';
 
 @Component({
   selector: 'list-view',
@@ -19,6 +20,12 @@ export class ListViewCategoryComponent {
 
   constructor(private service: PoemService, private dataInterchange: DataInterchangeService) { }
 
+  loadPoems(){
+    this.service.getPoemsAPI().subscribe((response)=>{console.log(response)}); 
+    console.log(this.poems);
+  }
+
+
   createListItems(poems: Poem[]): ListItem[] {
     let listItem: ListItem[] = [];
     Object.keys(poems).map((entry) => {
@@ -29,7 +36,7 @@ export class ListViewCategoryComponent {
         } else if (key === 'title') {
           item.title = value;
         } else if (key === 'date') {
-          item.date = value
+          item.date = value;
         } if (key === "category") {
           item.category = value;
         }
@@ -79,17 +86,17 @@ export class ListViewCategoryComponent {
   }
 
   removeFilter(): void{
-    this.categoryItems = this.createListItems(this.service.getPoems());
+    this.categoryItems = this.createListItems(this.poems);
     this.filteredEntries = false;
   }
 
 
   ngOnInit(): void {
+    this.loadPoems();
     this.dataInterchange.data$.subscribe(data => {
       this.category = data;
     })
-    this.categoryItems = this.sortTitleAscending(this.createListItems(this.service.getPoems()));
+    this.categoryItems = this.sortTitleAscending(this.createListItems(this.poems));
     console.log(this.categoryItems);
-    console.log(this.dateAscending);
   }
 }

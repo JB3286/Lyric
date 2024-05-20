@@ -1,5 +1,28 @@
 {
-  "poems":[
-    
+  "poems": [
+    {
+      "id": "0",
+      "title": "Huhu",
+      "date": "1986-03-10",
+      "category": "Leben",
+      "content": "<font face=\"Times New Roman\">fefwefwefwefwef<font size=\"7\">fwefwefwefwef</font></font><div><font face=\"Times New Roman\"><font size=\"7\"><br></font></font></div><div><font face=\"Times New Roman\"><font size=\"7\">dwdwdwddwdwdwdwdwdwdwdwdwdw</font></font>",
+      "comment": "kommentar"
+    },
+    {
+      "id": "1",
+      "title": "Juhu",
+      "date": "1997-09-28",
+      "category": "Liebe",
+      "content": "<font face=\"Times New Roman\">fefwefwefwefwef<font size=\"7\">fwefwefwefwef</font></font><div><font face=\"Times New Roman\"><font size=\"7\"><br></font></font></div><div><font face=\"Times New Roman\"><font size=\"7\">dwdwdwddwdwdwdwdwdwdwdwdwdw</font></font>",
+      "comment": "kommentar"
+    },
+    {
+      "id":"2",
+      "title": "Hansen",
+      "date": "1989-08-25",
+      "category": "Spiele",
+      "content": "<font face=\"Verdana\">fefwefwefwefwef<font size=\"7\">fwefwefwefwef</font></font><div><font face=\"Times New Roman\"><font size=\"7\"><br></font></font></div><div><font face=\"Times New Roman\"><font size=\"7\">dwdwdwddwdwdwdwdwdwdwdwdwdw</font></font></div>",
+      "comment": "blabla"
+    }
   ]
 }

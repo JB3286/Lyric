@@ -16,7 +16,9 @@ import { PoemViewComponent } from './components/poem/poem-category-view/poem-vie
 import { DataInterchangeService } from './services/data-interchange.service';
 import { ListViewCategoryComponent } from './components/directory/list-view/list-view-category.component';
 import { CreatePoemComponent } from './admin/create-poem/create-poem.component';
-import { QuillModule } from 'ngx-quill';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AngularEditorModule } from '@kolkov/angular-editor';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,12 +34,16 @@ import { QuillModule } from 'ngx-quill';
     PoemViewComponent,
     ListViewCategoryComponent,
     CreatePoemComponent,
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
-    QuillModule.forRoot(),
+    ReactiveFormsModule,
+    AngularEditorModule,
+    HttpClientModule
+
   ],
   providers: [PoemService, DataInterchangeService],
   bootstrap: [AppComponent]

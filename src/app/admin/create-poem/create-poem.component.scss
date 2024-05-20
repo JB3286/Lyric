@@ -1,5 +1,21 @@
-@import '../../../../node_modules/quill/dist/quill.bubble.css';
+#create-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    margin: 0 auto;
+    gap: 4rem;
+    margin-top: 2rem;
+}
 
-.content-editor:focus{
-    border: 3px solid black;
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+#header{
+    margin: 0;
+}
+
+#content{
+    font-size: 1rem;
 }

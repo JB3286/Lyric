@@ -4,6 +4,7 @@ import { Poem } from '../../../types/poem';
 import { PoemService } from '../../../services/poem.service';
 import { ActivatedRoute } from '@angular/router';
 import { DataInterchangeService } from '../../../services/data-interchange.service';
+import { isThisSecond } from 'date-fns';
 
 
 @Component({
@@ -56,9 +57,9 @@ export class PoemComponent implements OnInit {
     this.dataInterchange.data$.subscribe(data => {
       this.category = data;
       this.index = 0;
-      this.poems = [];
-      this.poems = this.service.getPoemsByCategory(this.category);
+      this.service.getPoemsAPI().subscribe((response)=>{this.poems.push(response)});
       this.isOdd(this.poems);
+      console.log(this.poems);
     });
   }
 

@@ -10,9 +10,7 @@ export class PoemViewComponent {
 
   @Input() inputPoem: Poem = {} as Poem;
 
+  domParser = new DOMParser();
 
-
-
-  
-  constructor() {  }
+  constructor() { }
 }
